@@ -6,25 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>use native docker checkpoint/restore on Ubuntu 14.04 | xichen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[docker version]:https://github.com/boucher/docker/releases
-https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1
-download:    docker-1.9.0-dev  
-mv docker-1.9.0-dev /usr/bin/docker">
+  <meta name="description" content="writen by chen xi.From:  xichenpro.com
+[docker version]:  
+As we try to use native docker checkpoint, you may need to use this specification version of Docker.thanks to Ross Boucher.  
+https://github.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="use native docker checkpoint/restore on Ubuntu 14.04">
 <meta property="og:url" content="http://yoursite.com/2016/06/10/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/index.html">
 <meta property="og:site_name" content="xichen">
-<meta property="og:description" content="[docker version]:https://github.com/boucher/docker/releases
-https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1
-download:    docker-1.9.0-dev  
-mv docker-1.9.0-dev /usr/bin/docker">
-<meta property="og:updated_time" content="2016-06-11T02:23:31.000Z">
+<meta property="og:description" content="writen by chen xi.From:  xichenpro.com
+[docker version]:  
+As we try to use native docker checkpoint, you may need to use this specification version of Docker.thanks to Ross Boucher.  
+https://github.">
+<meta property="og:updated_time" content="2016-06-11T17:08:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="use native docker checkpoint/restore on Ubuntu 14.04">
-<meta name="twitter:description" content="[docker version]:https://github.com/boucher/docker/releases
-https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1
-download:    docker-1.9.0-dev  
-mv docker-1.9.0-dev /usr/bin/docker">
+<meta name="twitter:description" content="writen by chen xi.From:  xichenpro.com
+[docker version]:  
+As we try to use native docker checkpoint, you may need to use this specification version of Docker.thanks to Ross Boucher.  
+https://github.">
   
     <link rel="alternative" href="/atom.xml" title="xichen" type="application/atom+xml">
   
@@ -175,21 +175,20 @@ mv docker-1.9.0-dev /usr/bin/docker">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>[docker version]:</strong><br><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a></p>
-<p><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a></p>
-<p>download:    docker-1.9.0-dev  </p>
-<p>mv docker-1.9.0-dev /usr/bin/docker</p>
-<p>root@vm1:/usr/bin# ls docker<br>docker</p>
-<p>root@vm1:/usr/bin# docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
+        <p>writen by chen xi.<br>From:  xichenpro.com</p>
+<p><strong>[docker version]:</strong>  </p>
+<p>As we try to use native docker checkpoint, you may need to use this specification version of Docker.<br>thanks to Ross Boucher.  </p>
+<p><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a><br><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a><br>download:    docker-1.9.0-dev  </p>
+<p>$mv docker-1.9.0-dev /usr/bin/docker</p>
+<p>$ ls docker<br>docker</p>
+<p>$ docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
 <p><strong>[kernel:]</strong></p>
-<p>root@vm1:/usr/bin# uname -a<br>Linux vm1 3.13.11-ckt22 #1 SMP Sat Jul 25 16:04:44 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</p>
+<p>$ uname -a<br>Linux vm1 3.13.11-ckt22 #1 SMP Sat Jul 25 16:04:44 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</p>
 <p>#3.13 must be patched, you ‘d better try to use 3.19.</p>
 <p> <strong>[CRIU:]</strong></p>
 <p>compile CRIU by yourself.   <a href="https://criu.org/Installation" target="_blank" rel="external">https://criu.org/Installation</a></p>
-<p>root@vm1:/usr/bin# criu -V</p>
-<p>Version: 2.2<br>GitID: v2.2</p>
-<p>If you want , send mail to me : xichen0425@gmail.com</p>
-<p>I have the whole environment in virtual machine.</p>
+<p>$ criu -V<br>Version: 2.2<br>GitID: v2.2</p>
+<p>If you want , send mail to me : xichen0425@gmail.com<br>I have the whole environment in virtual machine.</p>
 
       
     </div>
