@@ -130,6 +130,75 @@
 
       <div class="body-wrap">
   
+    <article id="post-use-native-docker-checkpoint-restore-on-Ubuntu-14-04" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/10/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" class="article-date">
+  	<time datetime="2016-06-11T02:18:31.000Z" itemprop="datePublished">2016-06-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/10/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/">use native docker checkpoint/restore on Ubuntu 14.04</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a></p>
+<p><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a></p>
+<p>download:    docker-1.9.0-dev  </p>
+<p>mv docker-1.9.0-dev /usr/bin/docker</p>
+<p>root@vm1:/usr/bin# ls docker<br>docker</p>
+<p>root@vm1:/usr/bin# docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
+<p>root@vm1:/usr/bin# uname -a<br>Linux vm1 3.13.11-ckt22 #1 SMP Sat Jul 25 16:04:44 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</p>
+<p>#3.13 must be patched, you ‘d better try to use 3.19.</p>
+<p>compile CRIU by yourself.   <a href="https://criu.org/Installation" target="_blank" rel="external">https://criu.org/Installation</a></p>
+<p>root@vm1:/usr/bin# criu -V</p>
+<p>Version: 2.2<br>GitID: v2.2</p>
+<p>If you want , send mail to me : xichen0425@gmail.com</p>
+<p>I have the whole environment in virtual machine.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/native-docker-checkpoint-restore-live-migration-CRIU/">native docker checkpoint/restore, live migration, CRIU</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-author-information" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
