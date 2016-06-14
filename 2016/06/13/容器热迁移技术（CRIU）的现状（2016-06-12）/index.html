@@ -4,17 +4,36 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>xichen</title>
+  <title>容器热迁移技术（CRIU）的应用分析（2016.06.12） | xichen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xichen">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="1.热迁移技术：
+真的是热迁移么？no.
+kernel based vs userspace c/r
+2.两个性能指标：downtime/total time:
+3.CRIU安装:
+$ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
+安装依赖包：apt-get install -y libprotobuf-dev libp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="容器热迁移技术（CRIU）的应用分析（2016.06.12）">
+<meta property="og:url" content="http://yoursite.com/2016/06/13/容器热迁移技术（CRIU）的现状（2016-06-12）/index.html">
 <meta property="og:site_name" content="xichen">
-<meta property="og:description">
+<meta property="og:description" content="1.热迁移技术：
+真的是热迁移么？no.
+kernel based vs userspace c/r
+2.两个性能指标：downtime/total time:
+3.CRIU安装:
+$ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
+安装依赖包：apt-get install -y libprotobuf-dev libp">
+<meta property="og:updated_time" content="2016-06-14T13:40:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xichen">
-<meta name="twitter:description">
+<meta name="twitter:title" content="容器热迁移技术（CRIU）的应用分析（2016.06.12）">
+<meta name="twitter:description" content="1.热迁移技术：
+真的是热迁移么？no.
+kernel based vs userspace c/r
+2.两个性能指标：downtime/total time:
+3.CRIU安装:
+$ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
+安装依赖包：apt-get install -y libprotobuf-dev libp">
   
     <link rel="alternative" href="/atom.xml" title="xichen" type="application/atom+xml">
   
@@ -128,9 +147,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-容器热迁移技术（CRIU）的现状（2016-06-12）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-容器热迁移技术（CRIU）的现状（2016-06-12）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/06/13/容器热迁移技术（CRIU）的现状（2016-06-12）/" class="article-date">
@@ -146,12 +163,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/13/容器热迁移技术（CRIU）的现状（2016-06-12）/">容器热迁移技术（CRIU）的应用分析（2016.06.12）</a>
+    <h1 class="article-title" itemprop="name">
+      容器热迁移技术（CRIU）的应用分析（2016.06.12）
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/容器，热迁移，CRIU-docker-live-migration/">容器，热迁移，CRIU,docker,live migration.</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -191,92 +219,40 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/容器，热迁移，CRIU-docker-live-migration/">容器，热迁移，CRIU,docker,live migration.</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/10/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">use native docker checkpoint/restore on Ubuntu 14.04</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-
-
-  
-    <article id="post-use-native-docker-checkpoint-restore-on-Ubuntu-14-04" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/10/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" class="article-date">
-  	<time datetime="2016-06-11T02:18:31.000Z" itemprop="datePublished">2016-06-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/10/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/">use native docker checkpoint/restore on Ubuntu 14.04</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>writen by chen xi.<br>From:  xichenpro.com</p>
-<p><strong>[docker version]:</strong>  </p>
-<p>As we try to use native docker checkpoint, you may need to use this specification version of Docker.<br>thanks to Ross Boucher.  </p>
-<p><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a><br><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a><br>download:    docker-1.9.0-dev  </p>
-<p>$mv docker-1.9.0-dev /usr/bin/docker</p>
-<p>$ ls docker<br>docker</p>
-<p>$ docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
-<p><strong>[kernel:]</strong></p>
-<p>$ uname -a<br>Linux vm1 3.13.11-ckt22 #1 SMP Sat Jul 25 16:04:44 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</p>
-<p>#3.13 must be patched, you ‘d better try to use 3.19.</p>
-<p> <strong>[CRIU:]</strong></p>
-<p>compile CRIU by yourself.   <a href="https://criu.org/Installation" target="_blank" rel="external">https://criu.org/Installation</a></p>
-<p>$ criu -V<br>Version: 2.2<br>GitID: v2.2</p>
-<p>If you want , send mail to me : xichen0425@gmail.com<br>I have the whole environment in virtual machine.</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/native-docker-checkpoint-restore-live-migration-CRIU/">native docker checkpoint/restore, live migration, CRIU</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
@@ -285,66 +261,6 @@
 
 
 
-
-  
-    <article id="post-author-information" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/10/author-information/" class="article-date">
-  	<time datetime="2016-06-11T01:47:46.000Z" itemprop="datePublished">2016-06-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/10/author-information/">author information</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> Currentlly, I am a master student in CMU MSIT program.<br> I will graduate in Mar.2017.<br> I live in Pittsburgh.  </p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/introduction/">introduction</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -368,8 +284,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
