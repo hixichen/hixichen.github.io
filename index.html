@@ -245,18 +245,20 @@
       
         <p>writen by chen xi.<br>From:  xichenpro.com</p>
 <p><strong>[docker version]:</strong>  </p>
-<p>As we try to use native docker checkpoint, you may need to use this specification version of Docker.<br>thanks to Ross Boucher.  </p>
+<p>As we try to use native docker checkpoint, you may need to use this specification version of Docker.<br>thanks to Ross Boucher’s great work.  </p>
 <p><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a><br><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a><br>download:    docker-1.9.0-dev  </p>
 <p>$mv docker-1.9.0-dev /usr/bin/docker</p>
-<p>$ ls docker<br>docker</p>
+<p>$ docker daemon &amp;</p>
 <p>$ docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
 <p><strong>[kernel:]</strong></p>
-<p>$ uname -a<br>Linux vm1 3.13.11-ckt22 #1 SMP Sat Jul 25 16:04:44 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</p>
-<p>#3.13 must be patched, you ‘d better try to use 3.19.</p>
+<p>#3.13 must be patched, you’d better try to use 3.19.<br>That means, you’d better use Ubunt15.04 or higher.</p>
 <p> <strong>[CRIU:]</strong></p>
-<p>compile CRIU by yourself.   <a href="https://criu.org/Installation" target="_blank" rel="external">https://criu.org/Installation</a></p>
+<p>$ git clone –b v2.2 <a href="https://github.com/xemul/criu.git" target="_blank" rel="external">https://github.com/xemul/criu.git</a><br>$ cd criu/</p>
+<p>dependecies:<br>apt-get install -y libprotobuf-dev libprotobuf-c0-dev protobuf-c-compiler \<br>protobuf-compiler python-protobuf libnl-3-dev pkg-config libcap-dev asciidoc</p>
+<p>change the version ,mark as hijacked if you want.<br>$ vim Makefile.versions<br>$ make &amp;&amp; make install</p>
 <p>$ criu -V<br>Version: 2.2<br>GitID: v2.2</p>
-<p>If you want , send mail to me : xichen0425@gmail.com<br>I have the whole environment in virtual machine.</p>
+<p>note: 2.3 had been released on Jun,14.</p>
+<p>If you have question, send mail to me : xichen0425@gmail.com<br>I have the whole environment in virtual machine.</p>
 
       
     </div>
