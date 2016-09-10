@@ -24,7 +24,7 @@ kernel based vs userspace c/r
 3.CRIU安装:
 $ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
 安装依赖包：apt-get install -y libprotobuf-dev libp">
-<meta property="og:updated_time" content="2016-06-14T13:40:42.000Z">
+<meta property="og:updated_time" content="2016-09-10T20:11:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="容器热迁移技术（CRIU）的应用分析（2016.06.12）">
 <meta name="twitter:description" content="1.热迁移技术：
@@ -212,6 +212,7 @@ $ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
 <p><strong>8.热迁移与不可变基础设施（Immutable Infrastructure）:</strong></p>
 <p>New pattern for deploying Docker containers: immutable infrastructure<br>As we discussed above, we use Docker as a “lightweight VM”. However, there is a voice in Docker community that “rather than being a lightweight VM”. Another main difference from VMs is that the containers are designed to be stateless and replaceable [17]. In the VM-centered world, VM contains all the working information like codes, disk data and state data. We say the VM infrastructure is mutable. But Docker container can be deployed in stateless pattern which is defined as immutable infrastructure that use replace rather maintain the state. According to immutable infrastructure, if we could separate the task into small tasks and separate the data and state, we may just need to kill the old container and immediately link to the new container. Handoff will be significantly simplified.&lt;个人的summer project&gt;</p>
 <p><strong>9.总结</strong></p>
+<p><strong>10.My demo</strong><br><a href="https://www.youtube.com/watch?v=S1J0HzCLSoM" target="_blank" rel="external">https://www.youtube.com/watch?v=S1J0HzCLSoM</a></p>
 <p>References:</p>
 <p>[15] CRIU. Checkpoint/Restore In Userspace, <a href="https://criu.org/Docker" target="_blank" rel="external">https://criu.org/Docker</a>.<br>[16] <a href="http://www.slideshare.net/Docker/live-migrating-a-container-pros-cons-and-gotchas" target="_blank" rel="external">http://www.slideshare.net/Docker/live-migrating-a-container-pros-cons-and-gotchas</a>.<br>[17] <a href="https://blog.docker.com/2016/03/containers-are-not-vms/" target="_blank" rel="external">https://blog.docker.com/2016/03/containers-are-not-vms/</a> posted By Mike Coleman March 24, 2016.<br>[18] <a href="https://www.chef.io/blog/2014/06/23/immutable-infrastructure-practical-or-not/" target="_blank" rel="external">https://www.chef.io/blog/2014/06/23/immutable-infrastructure-practical-or-not/</a> Posted on June 23, 2014 by Julian Dunn.<br>[19] <a href="http://developers.redhat.com/blog/2015/01/20/microservice-principles-and-" target="_blank" rel="external">http://developers.redhat.com/blog/2015/01/20/microservice-principles-and-</a> immutability-demonstrated-with-apache-spark-and-cassandra/ Posted on: January 20, 2015 by jayunit100.</p>
 <p>本人原创， 发布于个人博客：xichenpro.com<br>@2016-06-13<br>chen xi @CMU</p>
