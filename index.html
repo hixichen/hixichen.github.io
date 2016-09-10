@@ -130,6 +130,66 @@
 
       <div class="body-wrap">
   
+    <article id="post-go方法的问题思考" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/10/go方法的问题思考/" class="article-date">
+  	<time datetime="2016-09-10T20:04:31.000Z" itemprop="datePublished">2016-09-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/10/go方法的问题思考/">go方法的问题思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>go的方法是松耦合的。<br>好处是什么？   不同的结构实体，都可以访问调用， 将结构实体的数据，和外部计算进行了分离。<br>如果 方法有外部数据呢？假设方法需要依赖外部状态呢？ </p>
+<p>一个潜在的可能是<br>struct A{<br>  var dataA<br>}</p>
+<p>struct B{<br>  var dataB<br>}</p>
+<p>var global_data;<br>func (v *var) myfunc()  int {<br>  return global_data++;<br>}</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/A-tour-of-go/">A tour of go</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-go-入门学习" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
