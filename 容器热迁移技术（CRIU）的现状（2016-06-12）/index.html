@@ -1,190 +1,92 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>容器热迁移技术（CRIU）的应用分析（2016.06.12） | xichen&#39; blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.热迁移技术：
+    <title>容器热迁移技术（CRIU）的应用分析（2016.06.12） | xichen&#39; blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="chen xi">
+    
+    <meta name="description" content="1.热迁移技术：
 真的是热迁移么？no.
 kernel based vs userspace c/r
 2.两个性能指标：downtime/total time:
 3.CRIU安装:
-$ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
-安装依赖包：apt-get install -y libprotobuf-dev libp">
-<meta property="og:type" content="article">
-<meta property="og:title" content="容器热迁移技术（CRIU）的应用分析（2016.06.12）">
-<meta property="og:url" content="http://xichenpro.com/容器热迁移技术（CRIU）的现状（2016-06-12）/index.html">
-<meta property="og:site_name" content="xichen' blog">
-<meta property="og:description" content="1.热迁移技术：
-真的是热迁移么？no.
-kernel based vs userspace c/r
-2.两个性能指标：downtime/total time:
-3.CRIU安装:
-$ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
-安装依赖包：apt-get install -y libprotobuf-dev libp">
-<meta property="og:updated_time" content="2016-09-11T20:03:55.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="容器热迁移技术（CRIU）的应用分析（2016.06.12）">
-<meta name="twitter:description" content="1.热迁移技术：
-真的是热迁移么？no.
-kernel based vs userspace c/r
-2.两个性能指标：downtime/total time:
-3.CRIU安装:
-$ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
-安装依赖包：apt-get install -y libprotobuf-dev libp">
-  
-    <link rel="alternative" href="/atom.xml" title="xichen&#39; blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css">
+$ git clone –b v2.2 https://github.com/xemul/criu.git$ cd c">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="null" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/">chen xi</a></h1>
-		</hgroup>
-
+  <body>
+    <header>
+      <div>
 		
-
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">main</a></li>
-				        
-							<li><a href="/archives">aricles</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/hixichen" title="github">github</a>
-					        
-								<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/chen-xi-a4a0037a" title="linkedin">linkedin</a>
-					        
-								<a class="rss" target="_blank" href="#" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				
-				
-
-				
-				
-				<section class="switch-part switch-part3">
-				
-					<div id="js-aboutme">hixichen</div>
-				</section>
-				
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="xichen&#39; blog" title="xichen&#39; blog"/></a>
 			</div>
-		</div>
-	</header>				
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="xichen&#39; blog">xichen&#39; blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="Search" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">chen xi</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="null" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">chen xi</h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">main</a></li>
-		        
-					<li><a href="/archives">aricles</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/hixichen" title="github">github</a>
-			        
-						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/chen-xi-a4a0037a" title="linkedin">linkedin</a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-
-      <div class="body-wrap"><article id="post-容器热迁移技术（CRIU）的现状（2016-06-12）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/容器热迁移技术（CRIU）的现状（2016-06-12）/" class="article-date">
-  	<time datetime="2016-06-13T17:34:10.000Z" itemprop="datePublished">2016-06-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-      <input type="hidden" class="isFancy" />
+      <a href="/容器热迁移技术（CRIU）的现状（2016-06-12）/" title="容器热迁移技术（CRIU）的应用分析（2016.06.12）" itemprop="url">容器热迁移技术（CRIU）的应用分析（2016.06.12）</a>
+  </h1>
+  <p class="article-author">By
     
+      <a href="http://xichenpro.com" title="chen xi">chen xi</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-06-13T17:34:10.000Z" itemprop="datePublished">2016-06-13</time>
+    Updated:<time datetime="2016-09-11T20:03:55.000Z" itemprop="dateModified">2016-09-11</time>
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      容器热迁移技术（CRIU）的应用分析（2016.06.12）
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker-live-migration/">Docker live migration</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1.热迁移技术：</strong></p>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+		</div>
+		
+		<p><strong>1.热迁移技术：</strong></p>
 <p>真的是热迁移么？no.</p>
 <p>kernel based vs userspace c/r</p>
 <p><strong>2.两个性能指标：downtime/total time:</strong></p>
@@ -216,121 +118,230 @@ $ git clone –b v2.2 https://github.com/xemul/criu.git$ cd criu/
 <p>References:</p>
 <p>[15] CRIU. Checkpoint/Restore In Userspace, <a href="https://criu.org/Docker" target="_blank" rel="external">https://criu.org/Docker</a>.<br>[16] <a href="http://www.slideshare.net/Docker/live-migrating-a-container-pros-cons-and-gotchas" target="_blank" rel="external">http://www.slideshare.net/Docker/live-migrating-a-container-pros-cons-and-gotchas</a>.<br>[17] <a href="https://blog.docker.com/2016/03/containers-are-not-vms/" target="_blank" rel="external">https://blog.docker.com/2016/03/containers-are-not-vms/</a> posted By Mike Coleman March 24, 2016.<br>[18] <a href="https://www.chef.io/blog/2014/06/23/immutable-infrastructure-practical-or-not/" target="_blank" rel="external">https://www.chef.io/blog/2014/06/23/immutable-infrastructure-practical-or-not/</a> Posted on June 23, 2014 by Julian Dunn.<br>[19] <a href="http://developers.redhat.com/blog/2015/01/20/microservice-principles-and-" target="_blank" rel="external">http://developers.redhat.com/blog/2015/01/20/microservice-principles-and-</a> immutability-demonstrated-with-apache-spark-and-cassandra/ Posted on: January 20, 2015 by jayunit100.</p>
 <p>本人原创， 发布于个人博客：xichenpro.com<br>@2016-06-13<br>chen xi @CMU</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
-      
-    </div>
-    
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Docker-live-migration/">Docker live migration</a>
   </div>
+
+
+
+
+<div class="article-share" id="share">
+
   
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a class="jiathis_button_twitter">Twitter</a>
+    <a class="jiathis_button_evernote">EverNote</a>
+    <a href="http://www.jiathis.com/share?uid=1501277" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
     
-<nav id="article-nav">
-  
-    <a href="/go-入门学习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          go 入门学习
-        
-      </div>
-    </a>
-  
-  
-    <a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">use native docker checkpoint/restore on Ubuntu 14.04</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+" charset="utf-8"></script>      
+
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/go-入门学习/" title="go 入门学习">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  go 入门学习</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/"  title="use native docker checkpoint/restore on Ubuntu 14.04">
+ <strong>NEXT:</strong><br/> 
+ <span>use native docker checkpoint/restore on Ubuntu 14.04
+</span>
+</a>
+</div>
+
 </nav>
 
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
   
-</article>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/About-me/" title="About me">About me<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Docker-live-migration/" title="Docker live migration">Docker live migration<sup>2</sup></a></li>
+		
+			<li><a href="/tags/go-language/" title="go language">go language<sup>2</sup></a></li>
+		
+		</ul>
+</div>
 
 
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-    <a class="jiathis_button_twitter"></a>
-    <a class="jiathis_button_plus"></a> 
-    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		<a href="https://github.com/https://github.com/hixichen" target="_blank" title="github"></a>
+		
+		
+		
+        <a href="https://www.linkedin.com/https://www.linkedin.com/in/chen-xi-a4a0037a" target="_blank" title="linkedin"></a>
+        
 	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://xichenpro.com" target="_blank" title="chen xi">chen xi</a>
+		
+		</p>
 </div>
-
-
-
-
-
-
-
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 chen xi
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
-  </div>
 </footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
     }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
 });
 </script>
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
 </script>
 
 
-  </div>
-</body>
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'null', 'null');  
+ga('send', 'pageview');
+</script>
+
+
+  </body>
 </html>
