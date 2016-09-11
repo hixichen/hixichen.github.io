@@ -1,262 +1,600 @@
-
- <!DOCTYPE HTML>
-<html >
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>xichen&#39; blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="chen xi">
-    
-    <meta name="description" content="just personal blog">
-    
-    
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="stylesheet" href="/css/style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>xichen&#39; blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="just personal blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="xichen' blog">
+<meta property="og:url" content="http://xichenpro.com/index.html">
+<meta property="og:site_name" content="xichen' blog">
+<meta property="og:description" content="just personal blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xichen' blog">
+<meta name="twitter:description" content="just personal blog">
+  
+    <link rel="alternative" href="/atom.xml" title="xichen&#39; blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="xichen&#39; blog" title="xichen&#39; blog"/></a>
-			</div>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
 			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="xichen&#39; blog">xichen&#39; blog</a></h1>
-				<h2 class="blog-motto"></h2>
+			<img lazy-src="null" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">chen xi</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">main</a></li>
+				        
+							<li><a href="/archives">aricles</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/hixichen" title="github">github</a>
+					        
+								<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/chen-xi-a4a0037a" title="linkedin">linkedin</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">hixichen</div>
+				</section>
+				
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-					<li>
-					
-					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
+		</div>
+	</header>				
 </div>
 
-    </header>
-    <div id="container">
-      <div id="main">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/go方法的问题思考/" title="go方法的问题思考" itemprop="url">
-  
-    <h1 itemprop="name">go方法的问题思考</h1>
-    
-     
-           <p itemprop="description" >go的方法是松耦合的。好处是什么？   不同的结构实体，都可以访问调用， 将结构实体的数据，和外部计算进行了分离。如果 方法有外部数据呢？假设方法需要依赖外部状态呢？ 
-一个潜在的可能是struct A{  var dataA}
-struct B{  var dataB}
-var</p>
-        
-    
-    <time datetime="2016-09-10T20:04:31.000Z" itemprop="datePublished">2016-09-10</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/go-入门学习/" title="go 入门学习" itemprop="url">
-  
-    <h1 itemprop="name">go 入门学习</h1>
-    
-     
-           <p itemprop="description" >Go语言入门，初学要点摘要记录。
-if语句：
-“如果你必须使用这种形式，则把尽可能先满足的条件放在前面。”
-if condition{
-}else {
-}
-“Go 代码的常见写法是省略 else 部分”
-if inistialization; condition{
-}
-error</p>
-        
-    
-    <time datetime="2016-09-06T21:12:22.000Z" itemprop="datePublished">2016-09-06</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/容器热迁移技术（CRIU）的现状（2016-06-12）/" title="容器热迁移技术（CRIU）的应用分析（2016.06.12）" itemprop="url">
-  
-    <h1 itemprop="name">容器热迁移技术（CRIU）的应用分析（2016.06.12）</h1>
-    
-     
-           <p itemprop="description" >1.热迁移技术：
-真的是热迁移么？no.
-kernel based vs userspace c/r
-2.两个性能指标：downtime/total time:
-3.CRIU安装:
-$ git clone –b v2.2 https://github.com/xemul/criu</p>
-        
-    
-    <time datetime="2016-06-13T17:34:10.000Z" itemprop="datePublished">2016-06-13</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" title="use native docker checkpoint/restore on Ubuntu 14.04" itemprop="url">
-  
-    <h1 itemprop="name">use native docker checkpoint/restore on Ubuntu 14.04</h1>
-    
-     
-           <p itemprop="description" >writen by chen xi.From:  xichenpro.com
-[docker version]:  
-As we try to use native docker checkpoint, you may need to use this specification</p>
-        
-    
-    <time datetime="2016-06-11T02:18:31.000Z" itemprop="datePublished">2016-06-10</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/author-information/" title="author information" itemprop="url">
-  
-    <h1 itemprop="name">author information</h1>
-    
-     
-           <p itemprop="description" >Currentlly, I am a master student in CMU MSIT program. I will graduate in Mar.2017. I live in Pittsburgh.  
- my email: xichen0425 at gmail.c</p>
-        
-    
-    <time datetime="2016-06-11T01:47:46.000Z" itemprop="datePublished">2016-06-10</time>
-  </a>
-</section>
-
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
-
-  
-
-  
-<div class="tagslist">
-	<p class="asidetitle">标签</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/About-me/" title="About me">About me<sup>1</sup></a></li>
-		
-			<li><a href="/tags/Docker-live-migration/" title="Docker live migration">Docker live migration<sup>2</sup></a></li>
-		
-			<li><a href="/tags/go-language/" title="go language">go language<sup>2</sup></a></li>
-		
-		</ul>
-</div>
-
-
-</aside>
-</div>
     </div>
-    <footer><div id="footer" >
-	
-	
-	<div class="social-font clearfix">
-		
-		
-		
-		<a href="https://github.com/https://github.com/hixichen" target="_blank" title="github"></a>
-		
-		
-		
-        <a href="https://www.linkedin.com/https://www.linkedin.com/in/chen-xi-a4a0037a" target="_blank" title="linkedin"></a>
-        
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">chen xi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="null" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">chen xi</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">main</a></li>
+		        
+					<li><a href="/archives">aricles</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/hixichen" title="github">github</a>
+			        
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/chen-xi-a4a0037a" title="linkedin">linkedin</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
 	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
-		
-		<a href="http://xichenpro.com" target="_blank" title="chen xi">chen xi</a>
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+</nav>
+
+      <div class="body-wrap">
+  
+    <article id="post-go方法的问题思考" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/go方法的问题思考/" class="article-date">
+  	<time datetime="2016-09-10T20:04:31.000Z" itemprop="datePublished">2016-09-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/go方法的问题思考/">go方法的问题思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>go的方法是松耦合的。<br>好处是什么？   不同的结构实体，都可以访问调用， 将结构实体的数据，和外部计算进行了分离。<br>如果 方法有外部数据呢？假设方法需要依赖外部状态呢？ </p>
+<p>一个潜在的可能是<br>struct A{<br>  var dataA<br>}</p>
+<p>struct B{<br>  var dataB<br>}</p>
+<p>var global_data;<br>func (v *var) myfunc()  int {<br>  return global_data++;<br>}</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go-language/">go language</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-go-入门学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/go-入门学习/" class="article-date">
+  	<time datetime="2016-09-06T21:12:22.000Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/go-入门学习/">go 入门学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Go语言入门，初学要点摘要记录。</p>
+<p><strong>if语句：</strong></p>
+<p>“如果你必须使用这种形式，则把尽可能先满足的条件放在前面。”</p>
+<p>if condition{</p>
+<p>}else {</p>
+<p>}</p>
+<p>“Go 代码的常见写法是省略 else 部分”</p>
+<p>if inistialization; condition{</p>
+<p>}</p>
+<p><strong>error：</strong><br>var err error</p>
+<p>ret, _ =  myfunction() </p>
+<p>一个典型的用法：<br>“if err := file.Chmod(0664); err !=nil {<br>    fmt.Println(err)<br>    return err<br>}”</p>
+<p><strong>Switch语句：</strong></p>
+<p>“Go 语言中的 switch 结构使用上更加灵活。它接受任意形式的表达式：”</p>
+<p>switch: fallthrough , default, </p>
+<p>“。switch 语句的第二种形式是不提供任何被判断的值（实际上默认为判断是否为 true）”</p>
+<p>“witch 语句的第三种形式是包含一个初始化语句：</p>
+<p>switch initialization {</p>
+<p>}</p>
+<p><strong>字符编码问题：</strong></p>
+<p>“，ASCII 编码的字符占用 1 个字节，既每个索引都指向不同的字符，而非 ASCII 编码的字符（占有 2 到 4 个字节）不能单纯地使用索引来判断是否为同一个字符”</p>
+<p>“for ix, val := range coll { }。</p>
+<p>要注意的是，val 始终为集合中对应索引的值拷贝，因此它一般只具有只读性质，对它所做的任何修改都不会影响到集合中原有的值（”</p>
+<p>Go中不支持函数重载 ， 但是支持 函数调用 其他返回类型一致的函数作为入参</p>
+<p>defer语句，用来标示语句在return之前才执行， 用来释放资源 和进行代码的追踪。</p>
+<p>函数是可以作为其他函数的参数来进行传递的－－回调</p>
+<p><strong>匿名函数：</strong></p>
+<p>“fplus := func(x, y int) int { return x + y }，然后通过变量名对函数进行调用：fplus(3,4)。”</p>
+<p>“关键字 defer经常配合匿名函数使用，它可以用于改变函数的命名返回值。”</p>
+<p>闭包很像c语言中的define， 也常用在debug中</p>
+<p><strong>数组：</strong><br>可以进行切片，slice更像是list.<br>带标签的结构体： －－ 像是对结构体中变量的相关描述，这些描述信息一般情况下是不可见的，可以用<br>reflect field来进行检测</p>
+<p><strong>结构体</strong></p>
+<p>可以有 匿名字段<br>“匿名字段本身可以是一个结构体类型，即 结构体可以包含内嵌结构体。”</p>
+<p>内嵌or组合－－可以用继承的概念进行类比</p>
+<p>“在一个结构体中对于每一种数据类型只能有一个匿名字段。”<br>“两个字段拥有相同的名字（可能是继承来的名字）时该怎么办呢？” －－重载，外层覆盖内层</p>
+<p>“在 Go 语言中，结构体就像是类的一种简化形式”<br>方法：感觉略奇葩，在一个包内，可以被同类型函数调用，  1. 怎么保证竞争  2.如何私有？</p>
+<p>“receiver_type 叫做 （接收者）基本类型，这个类型必须在和方法同样的包中被声明。”<br>用指针调用方法，可以减少调用的代价。</p>
+<p>“指针方法和值方法都可以在指针或非指针上被调用，”</p>
+<p>未导出字段：<br>“提供 getter 和 setter 方法。对于 setter 方法使用 Set 前缀，对于 getter 方法只适用成员名。”</p>
+<p>“结构体内嵌和自己在同一个包中的结构体时，可以彼此访问对方所有的字段和方法。”<br><strong> 规范</strong><br>“想写规范的 Go<br>程序，就应该遵守这些约定，给方法合适的名字和签名，就像那些通用方法那样。这样做会使 Go 开发的软件更加具有一致性和可读性。比如：如果需要一个 convert-to-string 方法，应该命名为 String()，而不是 ToString()”</p>
+<p>“在 Go 中，类型就是类（数据和关联的方法）。Go 不知道类似面向对象语言的类继承的概念。继承有两个好处：代码复用和多态。”</p>
+<p>“在 Go 中，代码复用通过组合和委托实现，多态通过接口的使用来实现：有时这也叫 组件编程（Component Programming）。”</p>
+<p>“格式化描述符 %T 会给出类型的完全规格，%#v 会给出实例的完整输出，包括它的字段（在程序自动生成 Go 代码时也很有用）。”</p>
+<p>要注意无限迭代调用问题。</p>
+<p><strong>垃圾回收：</strong><br>“Go 开发者不需要写代码来释放程序中不再使用的变量和结构占用的内存，在 Go 运行时中有一个独立的进程，即垃圾收集器（GC）”</p>
+<p>一个对象从内存移除之前执行特殊操作：<br>“runtime.SetFinalizer(obj, func(obj *typeObj))”</p>
+<p><strong>接口：</strong><br>“接口定义了一组方法（方法集），但是这些方法不包含（实现）代码：它们没有被实现（它们是抽象的）。接口里也不能包含变量。”</p>
+<p>“类型不需要显式声明它实现了某个接口：接口被隐式地实现。多个类型可以实现同一个接口。</p>
+<p>实现某个接口的类型（除了实现接口方法外）可以有其他的方法。</p>
+<p>一个类型可以实现多个接口。</p>
+<p>接口类型可以包含一个实例的引用， 该实例的类型实现了此接口（接口是动态类型）。”</p>
+<p><strong>类型检测：</strong><br>“可以用 type-switch 进行运行时类型分析，但是在 type-switch 不允许有 fallthrough 。”</p>
+<p>“解析诸如 JSON 或 XML 编码的数据，类型测试和转换会非常有用。”</p>
+<p>“测试一个值是否实现了某个接口”</p>
+<p>“panic(“fail”) 用于停止处于在非正常情况下的程序”</p>
+<p>“io 包里的 Readers 和 Writers 都是不带缓冲的，bufio 包里提供了对应的带缓冲的操作，在读写 UTF-8 编码的文本文件时它们尤其有用。”</p>
+<p>“在实际编程中尽可能的使用这些接口，会使程序变得更通用，”</p>
+<p>“反射是用程序检查其所拥有的结构，尤其是类型的一种能力；这是元编程的一种形式。反射可以在运行时检查类型和变量，例如它的大小、方法和 动态 的调用这些方法”</p>
+<p>v.canSet()?</p>
+<p>“要想让其可设置我们需要使用 Elem() 函数，这间接的使用指针：v = v.Elem()”</p>
+<p>可以反射变量，反射接口，反射结构体。</p>
+<p><strong>面向对象</strong><br>传统面向对象： 数据和方法，封装在一起。</p>
+<p>“Go 没有类：数据（结构体或更一般的类型）和方法是一种松耦合的正交关系。”</p>
+<p>“像 Python，Ruby 这类语言，动态类型是延迟绑定的（在运行时进行）：方法只是用参数和变量简单地调用，然后在运行时才解析（它们很可能有像 responds_to 这样的方法来检查对象是否可以响应某个方法，但是这也意味着更大的编码量和更多的测试工作）”</p>
+<p>“Go 的实现与此相反，通常需要编译器静态检查的支持：当变量被赋值给一个接口类型的变量时，编译器会检查其是否实现了该接口的所有函数”</p>
+<p>Go中的面向对象： 没有类，松耦合。<br>封装，继承，多台。</p>
+<p><strong>Go中的协程：</strong></p>
+<p>多线程范式：<br>tpc: “thread-per-connection 模型不够有效。  加锁，保证只有一个线程能够访问相关的资源。<br>csp: Communicating Sequential Processes（顺序通信处理）<br>mpm: “message passing-model（消息传递模式）”，用在erlang</p>
+<p>“在 Go 中，应用程序并发处理的部分被称作 goroutines（协程），它可以进行更有效的并发运算。”</p>
+<p>“协程是通过使用关键字 go 调用（执行）一个函数或者方法来实现的（也可以是匿名或者 lambda 函数）”</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go-language/">go language</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-容器热迁移技术（CRIU）的现状（2016-06-12）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/容器热迁移技术（CRIU）的现状（2016-06-12）/" class="article-date">
+  	<time datetime="2016-06-13T17:34:10.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/容器热迁移技术（CRIU）的现状（2016-06-12）/">容器热迁移技术（CRIU）的应用分析（2016.06.12）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>1.热迁移技术：</strong></p>
+<p>真的是热迁移么？no.</p>
+<p>kernel based vs userspace c/r</p>
+<p><strong>2.两个性能指标：downtime/total time:</strong></p>
+<p><strong>3.CRIU安装:</strong></p>
+<p>$ git clone –b v2.2 <a href="https://github.com/xemul/criu.git" target="_blank" rel="external">https://github.com/xemul/criu.git</a><br>$ cd criu/</p>
+<p>安装依赖包：<br>apt-get install -y libprotobuf-dev libprotobuf-c0-dev protobuf-c-compiler \<br>protobuf-compiler python-protobuf libnl-3-dev pkg-config  libcap-dev asciidoc</p>
+<p>change the version ,mark as hijacked，修改下版本<br>$ vim Makefile.versions</p>
+<p>$ make &amp;&amp; make install</p>
+<p>[kernel]:<br>$ uname -a<br>Linux vm1 3.13.11-ckt22 #1 SMP Sat Jul 25 16:04:44 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</p>
+<p>#3.13 must be patched, you ‘d better try to use 3.19.<br>实际上CRIU的内核维护都不在提供ubuntu14.04的相关安装包了，强烈建议使用ubuntu15.04（3.19）或者更高的版本。</p>
+<p><strong>docker native vs external :</strong><br>/home/vagrant/criu# criu -V<br>Version: 2.2.99       //99 is my personal version<br>GitID: v2.2</p>
+<p>docker version:</p>
+<p>As we try to use native docker checkpoint, you may need to use this specification version of Docker.<br>thanks to Ross Boucher.<br><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a><br><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a><br>download: docker-1.9.0-dev<br>$mv docker-1.9.0-dev /usr/bin/docker</p>
+<p>$ ls docker<br>docker</p>
+<p>$ docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
+<p><strong>4.简单案例（待补充）</strong></p>
+<p><strong>5.RUNC与CRIU的关系(待补充)</strong></p>
+<p><strong>6.CRIU当前的问题（待补充):</strong></p>
+<p>Closed TCP socket with peer-name blocks dump #62<br><a href="https://github.com/xemul/criu/issues/62" target="_blank" rel="external">https://github.com/xemul/criu/issues/62</a></p>
+<p>tcp: allow to enable repair mode for sockets in closing states<br><a href="https://lists.openvz.org/pipermail/criu/2014-April/013653.html" target="_blank" rel="external">https://lists.openvz.org/pipermail/criu/2014-April/013653.html</a></p>
+<p>[CRIU] unexpected socket state dump failure<br><a href="https://lists.openvz.org/pipermail/criu/2015-October/022675.html" target="_blank" rel="external">https://lists.openvz.org/pipermail/criu/2015-October/022675.html</a></p>
+<p><a href="http://benohead.com/tcp-about-fin_wait_2-time_wait-and-close_wait/" target="_blank" rel="external">http://benohead.com/tcp-about-fin_wait_2-time_wait-and-close_wait/</a></p>
+<p><a href="https://lwn.net/Articles/525675/" target="_blank" rel="external">https://lwn.net/Articles/525675/</a> LCE: Checkpoint/restore in user space: are we there yet?</p>
+<p><strong>7.内核补丁的介绍(待补充):</strong></p>
+<p><strong>8.热迁移与不可变基础设施（Immutable Infrastructure）:</strong></p>
+<p>New pattern for deploying Docker containers: immutable infrastructure<br>As we discussed above, we use Docker as a “lightweight VM”. However, there is a voice in Docker community that “rather than being a lightweight VM”. Another main difference from VMs is that the containers are designed to be stateless and replaceable [17]. In the VM-centered world, VM contains all the working information like codes, disk data and state data. We say the VM infrastructure is mutable. But Docker container can be deployed in stateless pattern which is defined as immutable infrastructure that use replace rather maintain the state. According to immutable infrastructure, if we could separate the task into small tasks and separate the data and state, we may just need to kill the old container and immediately link to the new container. Handoff will be significantly simplified.&lt;个人的summer project&gt;</p>
+<p><strong>9.总结</strong></p>
+<p><strong>10.My demo</strong><br><a href="https://www.youtube.com/watch?v=S1J0HzCLSoM" target="_blank" rel="external">https://www.youtube.com/watch?v=S1J0HzCLSoM</a></p>
+<p>References:</p>
+<p>[15] CRIU. Checkpoint/Restore In Userspace, <a href="https://criu.org/Docker" target="_blank" rel="external">https://criu.org/Docker</a>.<br>[16] <a href="http://www.slideshare.net/Docker/live-migrating-a-container-pros-cons-and-gotchas" target="_blank" rel="external">http://www.slideshare.net/Docker/live-migrating-a-container-pros-cons-and-gotchas</a>.<br>[17] <a href="https://blog.docker.com/2016/03/containers-are-not-vms/" target="_blank" rel="external">https://blog.docker.com/2016/03/containers-are-not-vms/</a> posted By Mike Coleman March 24, 2016.<br>[18] <a href="https://www.chef.io/blog/2014/06/23/immutable-infrastructure-practical-or-not/" target="_blank" rel="external">https://www.chef.io/blog/2014/06/23/immutable-infrastructure-practical-or-not/</a> Posted on June 23, 2014 by Julian Dunn.<br>[19] <a href="http://developers.redhat.com/blog/2015/01/20/microservice-principles-and-" target="_blank" rel="external">http://developers.redhat.com/blog/2015/01/20/microservice-principles-and-</a> immutability-demonstrated-with-apache-spark-and-cassandra/ Posted on: January 20, 2015 by jayunit100.</p>
+<p>本人原创， 发布于个人博客：xichenpro.com<br>@2016-06-13<br>chen xi @CMU</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker-live-migration/">Docker live migration</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-use-native-docker-checkpoint-restore-on-Ubuntu-14-04" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" class="article-date">
+  	<time datetime="2016-06-11T02:18:31.000Z" itemprop="datePublished">2016-06-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/">use native docker checkpoint/restore on Ubuntu 14.04</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>writen by chen xi.<br>From:  xichenpro.com</p>
+<p><strong>[docker version]:</strong>  </p>
+<p>As we try to use native docker checkpoint, you may need to use this specification version of Docker.<br>thanks to Ross Boucher’s great work.  </p>
+<p><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a><br><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a><br>download:    docker-1.9.0-dev  </p>
+<p>$mv docker-1.9.0-dev /usr/bin/docker</p>
+<p>$ docker daemon &amp;</p>
+<p>$ docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
+<p><strong>[kernel:]</strong></p>
+<p>#3.13 must be patched, you’d better try to use 3.19.<br>That means, you’d better use Ubunt15.04 or higher.</p>
+<p> <strong>[CRIU:]</strong></p>
+<p>$ git clone –b v2.2 <a href="https://github.com/xemul/criu.git" target="_blank" rel="external">https://github.com/xemul/criu.git</a><br>$ cd criu/</p>
+<p>dependecies:<br>apt-get install -y libprotobuf-dev libprotobuf-c0-dev protobuf-c-compiler \<br>protobuf-compiler python-protobuf libnl-3-dev pkg-config libcap-dev asciidoc</p>
+<p>change the version ,mark as hijacked if you want.<br>$ vim Makefile.versions<br>$ make &amp;&amp; make install</p>
+<p>$ criu -V<br>Version: 2.2<br>GitID: v2.2</p>
+<p>note: 2.3 had been released on Jun,14.</p>
+<p>If you have question, send mail to me : xichen0425@gmail.com<br>I have the whole environment in virtual machine.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker-live-migration/">Docker live migration</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-author-information" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/author-information/" class="article-date">
+  	<time datetime="2016-06-11T01:47:46.000Z" itemprop="datePublished">2016-06-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/author-information/">author information</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> Currentlly, I am a master student in CMU MSIT program.<br> I will graduate in Mar.2017.<br> I live in Pittsburgh.  </p>
+<p> my email: xichen0425 at gmail.com</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/About-me/">About me</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 chen xi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
 });
 </script>
 
-
-
-
-
-
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'null', 'null');  
-ga('send', 'pageview');
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 
-  </body>
- </html>
+  </div>
+</body>
+</html>
