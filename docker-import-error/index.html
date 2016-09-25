@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>author information | xichen&#39; blog</title>
+    <title>docker_import_error | xichen&#39; blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="chen xi">
     
-    <meta name="description" content="Currentlly, I am a master student in CMU MSIT program. I will graduate in Mar.2017. I live in Pittsburgh.  
- my email: xichen0425 at gmail.com">
+    <meta name="description" content="When you face this issue while do “docker import”, please check your image. 
+tar cvf image.tar image/$cd image/      #you must enter into the director">
     
     
     
@@ -63,15 +63,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/author-information/" title="author information" itemprop="url">author information</a>
+      <a href="/docker-import-error/" title="docker_import_error" itemprop="url">docker_import_error</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xichenpro.com" title="chen xi">chen xi</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-06-11T01:47:46.000Z" itemprop="datePublished">2016-06-10</time>
-    Updated:<time datetime="2016-09-11T19:58:58.000Z" itemprop="dateModified">2016-09-11</time>
+    <time datetime="2016-07-25T15:41:00.000Z" itemprop="datePublished">2016-07-25</time>
+    Updated:<time datetime="2016-09-25T15:42:47.000Z" itemprop="dateModified">2016-09-25</time>
     
   </p>
 </header>
@@ -83,15 +83,18 @@
 		
 		</div>
 		
-		<p> Currentlly, I am a master student in CMU MSIT program.<br> I will graduate in Mar.2017.<br> I live in Pittsburgh.  </p>
-<p> my email: xichen0425 at gmail.com</p>
+		<p>When you face this issue while do “docker import”, please check your image. </p>
+<p>tar cvf image.tar image/<br><strong>$cd image/</strong>      #you must enter into the directory to get the tar ball.</p>
+<p>$tar cvf image.tar *</p>
+<p>check the directory !!I faced the similar log but finally I found it had included the extra directory!</p>
+<p>my answer on github:<br><a href="https://github.com/docker/docker/issues/9245" target="_blank" rel="external">https://github.com/docker/docker/issues/9245</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/About-me/">About me</a>
+  <span></span> <a href="/tags/Docker/">Docker</a>
   </div>
 
 
@@ -127,13 +130,21 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" title="use native docker checkpoint/restore on Ubuntu 14.04">
+ <a href="/go-入门学习/" title="go 入门学习">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  use native docker checkpoint/restore on Ubuntu 14.04</span>
+  go 入门学习</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/容器热迁移技术（CRIU）的现状（2016-06-12）/"  title="容器热迁移技术（CRIU）的应用分析（2016.06.12）">
+ <strong>NEXT:</strong><br/> 
+ <span>容器热迁移技术（CRIU）的应用分析（2016.06.12）
+</span>
+</a>
+</div>
 
 </nav>
 
