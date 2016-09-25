@@ -9,6 +9,9 @@
     
     <meta name="author" content="chen xi">
     
+    <meta name="description" content="做了一下午的WiFi penetration,使用了工具：zANTI，dsploit, lanmitm.
+太好玩了，我的实践证明一旦进入内网，机器简直就是鱼肉。真实机器： victim： nexus 6, with AVG security suit (free version)攻击机：samsun">
+    
     
     
     
@@ -68,7 +71,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-09-25T04:17:26.000Z" itemprop="datePublished">2016-09-25</time>
-    Updated:<time datetime="2016-09-25T04:17:26.000Z" itemprop="dateModified">2016-09-25</time>
+    Updated:<time datetime="2016-09-25T04:30:41.000Z" itemprop="dateModified">2016-09-25</time>
     
   </p>
 </header>
@@ -80,9 +83,34 @@
 		
 		</div>
 		
-		  
+		<p>做了一下午的WiFi penetration,使用了工具：zANTI，dsploit, lanmitm.</p>
+<p>太好玩了，我的实践证明一旦进入内网，机器简直就是鱼肉。<br>真实机器： victim： nexus 6, with AVG security suit (free version)<br>攻击机：samsung S5  with busybox. </p>
+<p>zANTI，dsploit, lanmitm 都能够成功进行中间人攻击。<br>最爱的是zANTI，操作极为简单，有完整的nmap扫描。 </p>
+<p>而且,,在抓包之后能够进行图片抓取， http head match</p>
+<p>lanmitm工具抓包之后，需要倒出分析。 </p>
+<p>一个教程链接： <a href="https://jiji262.github.io/wooyun_articles/drops/%E5%85%B3%E4%BA%8EzANTI%E5%92%8Cdsploit%E4%B8%A4%E6%AC%BE%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AF%B9%E6%AF%94.html" target="_blank" rel="external">https://jiji262.github.io/wooyun_articles/drops/%E5%85%B3%E4%BA%8EzANTI%E5%92%8Cdsploit%E4%B8%A4%E6%AC%BE%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AF%B9%E6%AF%94.html</a></p>
+<p>总之，用过之后非常震惊！</p>
+<p><strong>成功抓取微博访问数据，访问图片，cookie劫持登录..</strong></p>
+<p>内网安全，简直，如若无物！</p>
+<p>现在的条件是已经在同一个内网，如果没在内网呢？<br>能否主动勾搭对方进入当前的局域网呢（自己配置的wifi 热点？</p>
+<p>那就妥了，问题推给了一个在palo alto networks做谭老师同学，给了这个： <a href="https://www.wifipineapple.com/" target="_blank" rel="external">https://www.wifipineapple.com/</a></p>
+<p>他说他买了这个。<br>设备上2个网卡，一个在wifi monitor mode进行监听 ，一个发送。 </p>
+<ol>
+<li>伪造热点。 </li>
+<li>主动让手机下限 ！！！！！！ 你没看错，是主动发包，让对方离开下在连Wi-Fi 热点。 </li>
+<li>然后伪造报文进行勾搭链接。。<br>4.鱼肉之。。</li>
+</ol>
+<p>看了资料和他的介绍。。</p>
+<p>整个人都不好..简直就是没穿“’窑裤儿” －－ 此处谭老师提醒要文明讲话。。</p>
+<p>下周找个ios机器搞一下！</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/security/">security</a>
+  </div>
 
 
 
@@ -154,6 +182,8 @@
 			<li><a href="/tags/Docker-live-migration/" title="Docker live migration">Docker live migration<sup>2</sup></a></li>
 		
 			<li><a href="/tags/go-language/" title="go language">go language<sup>2</sup></a></li>
+		
+			<li><a href="/tags/security/" title="security">security<sup>1</sup></a></li>
 		
 			<li><a href="/tags/study-in-CMU/" title="study in CMU">study in CMU<sup>1</sup></a></li>
 		
