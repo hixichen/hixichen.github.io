@@ -4,13 +4,17 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>course project thinking for cmu-14823 | xichen&#39; blog</title>
+    <title>use python with pandas to get the skew in excel | xichen&#39; blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="chen xi">
     
-    <meta name="description" content="Course Project: protect your personal information of your resume
-Recently, I am trying to find a full time job in America.But I found the system they ">
+    <meta name="description" content="/*
+write @2014author: chen xi */
+use python to read the data in excel and generate the skew(). 
+python3.3:
+#this is a test case
+-- coding: gbk --print">
     
     
     
@@ -63,15 +67,15 @@ Recently, I am trying to find a full time job in America.But I found the system 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/course_project_thinking_in_cmu/" title="course project thinking for cmu-14823" itemprop="url">course project thinking for cmu-14823</a>
+      <a href="/use-python-with-pandas-to-get-the-skew-in-excel/" title="use python with pandas to get the skew in excel" itemprop="url">use python with pandas to get the skew in excel</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xichenpro.com" title="chen xi">chen xi</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-09-12T18:46:16.000Z" itemprop="datePublished">2016-09-12</time>
-    Updated:<time datetime="2016-09-12T18:48:30.000Z" itemprop="dateModified">2016-09-12</time>
+    <time datetime="2014-12-25T17:09:19.000Z" itemprop="datePublished">2014-12-25</time>
+    Updated:<time datetime="2016-09-25T16:11:18.000Z" itemprop="dateModified">2016-09-25</time>
     
   </p>
 </header>
@@ -80,51 +84,57 @@ Recently, I am trying to find a full time job in America.But I found the system 
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#coding-gbk"><span class="toc-number">1.</span> <span class="toc-text">-- coding: gbk --</span></a></li></ol>
 		</div>
 		
-		<p><strong>Course Project: protect your personal information of your resume</strong></p>
-<p>Recently, I am trying to find a full time job in America.<br>But I found the system they used really suck. </p>
-<pre><code>- some people shared the profile said they are HR in some company with a email address like Gmail or other mail. And he can get tons of resume with your address, phone number.
+		<p>/*</p>
+<p>write @2014<br>author: chen xi<br> */</p>
+<p>use python to read the data in excel and generate the skew(). </p>
+<p>python3.3:</p>
+<p>#this is a test case</p>
+<h1 id="coding-gbk"><a href="#coding-gbk" class="headerlink" title="-- coding: gbk --"></a>-<em>- coding: gbk -</em>-</h1><p>print(“hello python!中文”)</p>
+<p>#env config<br>import xlrd<br>import os<br>import xlwt3<br>import numpy</p>
+<p>import pandas as pd</p>
+<p>#from pandas import Series,DataFrame</p>
+<p>#import pandas</p>
+<p>data = xlrd.open_workbook(“E:\data.xlsx”)<br>table = data.sheets()[0]   #this need to be verify more</p>
+<p>#print (“check”)<br>print (table.nrows)<br>print (table.name)<br>print (“############################”)</p>
+<p>#total line num<br>line_num=table.nrows</p>
+<p>cell_sectionA=table.cell(1,0).value<br>cell_sectionB=table.cell(1,1).value</p>
+<p>#print (cell_sectionA)</p>
+<p>#print (cell_sectionB)</p>
+<p>start_value=cell_sectionA</p>
+<p>#we need to recode the start value ,but not the end.<br>sectionB_each_time_start=0</p>
+<p>#sectionB_each_time_end=i is ok.</p>
+<p>for i in range(1,line_num):<br>    if start_value != table.cell(i,0).value:<br>        cacu_num=i-sectionB_each_time_start;</p>
+<pre><code>#print (cacu_num)
+#print (&quot;********************************&quot;)
+data={}
+for j in range(0,(cacu_num-1)):
+    data[j]= table.cell((sectionB_each_time_start+j+1),1).value
+    #print (data[j])
 
-- For the work authentication, every time you apply for the job you need to sign. And check whether you are disability and protected veteran.
-</code></pre><p>so, why not we create a format can sync with the most of systems of the companies. </p>
-<p>Goal:</p>
-<pre><code>1. Authenticate the employers. The platform will give the authenticate valid right to get the limited information of employee. 
-2. mark the sensitivity information. Let’s say, for the first interviews, they do not need the address and other information. 
-3. sync with the profile system. Designed a specific format of document. 
-    all items can be marked and program. 
+df = pd.Series(data)
+#print(&quot;skew\t&quot;)
+#print(&quot;skew: %d  %f&quot; %(table.cell(sectionB_each_time_start+1,0).value,df.skew()))
+print(&quot;%d&quot;%table.cell(sectionB_each_time_start+1,0).value)
+#print(&quot;%f&quot; %df.skew())
 
-4. digit signature.Let&apos;s say, if you have sign the information like disability and veteran. Authenticated employers can request this encrypted information and sync with their profile.
-</code></pre><p>when I write here, I realize this could be a small business for start-up company. But I cannot make sure if someone had done something like this. </p>
-<p>Evaluation:</p>
-<ul>
-<li>authentication process with a demo. </li>
-<li>digital process with a quick demo.<ul>
-<li>sensitivity control model. </li>
-<li>demo for the whole process.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Course Project Idea2:  watch out your phone, it may automat connect to a phishing Wi-Fi</strong></p>
-<p>A research project: we try to deploy a Wi-Fi hot spot in some areas like university, parks, airport. We name the Wi-Fi to “CMU-Welcome”, “PIT-airport” “PNC-PARK”.</p>
-<p>we force on two things:</p>
-<ol>
-<li><p>analysis the types of phones will connect to this Wi-Fi.<br> android? apple?</p>
-<p> generate report1.</p>
-</li>
-<li><p>try to get the information as much as we can.<br>(maybe this is illegal, perhaps we need to do some paper works.)</p>
-<p> mark the sensitive information we can get during the hack.<br> generate report2. </p>
-</li>
-</ol>
-<p>Evaluation:<br>report1 &amp;&amp; report 2.<br>Manual book.</p>
+#after caculate ,update the variable.
+sectionB_each_time_start=i-1
+start_value=table.cell(i,0).value
+</code></pre><p>#file=xlwt3.Workbook()</p>
+<p>#table_for_wt=file.add_sheet(“test1”);</p>
+<p>#table_for_wt.write(0,0,cell_b)</p>
+<p>#table_for_wt.write(1,1,cell_b)</p>
+<p>#file.save(‘E:\wtest.xls’)</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/study-in-CMU/">study in CMU</a>
+  <span></span> <a href="/tags/python/">python</a>
   </div>
 
 
@@ -160,18 +170,18 @@ Recently, I am trying to find a full time job in America.But I found the system 
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/wifi-penetration/" title="wifi_penetration">
+ <a href="/kernel-issue-tracked-in-THP-huge-page/" title="kernel issue tracked in  THP huge page">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  wifi_penetration</span>
+  kernel issue tracked in  THP huge page</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/go方法的问题思考/"  title="go方法的问题思考">
+<a href="/Software-Solutions-against-page-migration-coherency-problem-on-Embedded-Heterogeneous-System/"  title="Software Solutions against page migration coherency problem on Embedded Heterogeneous System @2013">
  <strong>NEXT:</strong><br/> 
- <span>go方法的问题思考
+ <span>Software Solutions against page migration coherency problem on Embedded Heterogeneous System @2013
 </span>
 </a>
 </div>
@@ -184,7 +194,7 @@ Recently, I am trying to find a full time job in America.But I found the system 
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#coding-gbk"><span class="toc-number">1.</span> <span class="toc-text">-- coding: gbk --</span></a></li></ol>
   </div>
 
 <div id="asidepart">
