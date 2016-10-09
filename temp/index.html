@@ -4,17 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>use python with pandas to get the skew in excel | xichen&#39; blog</title>
+    <title>temp | xichen&#39; blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="chen xi">
     
-    <meta name="description" content="/*
-write @2014author: chen xi */
-use python to read the data in excel and generate the skew(). 
-python3.3:
-#this is a test case
--- coding: gbk --print">
+    <meta name="description" content="https://docs.google.com/document/d/13vMfbZh2SXPMT6unk9y4Nq9CHak75T5u58q-JXHnCrQ/edit">
     
     
     
@@ -67,15 +62,15 @@ python3.3:
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/use-python-with-pandas-to-get-the-skew-in-excel/" title="use python with pandas to get the skew in excel" itemprop="url">use python with pandas to get the skew in excel</a>
+      <a href="/temp/" title="temp" itemprop="url">temp</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xichenpro.com" title="chen xi">chen xi</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-12-25T17:09:19.000Z" itemprop="datePublished">2014-12-25</time>
-    Updated:<time datetime="2016-09-26T19:03:46.000Z" itemprop="dateModified">2016-09-26</time>
+    <time datetime="2016-10-09T20:06:01.000Z" itemprop="datePublished">2016-10-09</time>
+    Updated:<time datetime="2016-10-09T20:06:23.000Z" itemprop="dateModified">2016-10-09</time>
     
   </p>
 </header>
@@ -84,58 +79,13 @@ python3.3:
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#coding-gbk"><span class="toc-number">1.</span> <span class="toc-text">-- coding: gbk --</span></a></li></ol>
+		
 		</div>
 		
-		<p>/*</p>
-<p>write @2014<br>author: chen xi<br> */</p>
-<p>use python to read the data in excel and generate the skew(). </p>
-<p>python3.3:</p>
-<p>#this is a test case</p>
-<h1 id="coding-gbk"><a href="#coding-gbk" class="headerlink" title="-- coding: gbk --"></a>-<em>- coding: gbk -</em>-</h1><p>print(“hello python!中文”)</p>
-<p>#env config<br>import xlrd<br>import os<br>import xlwt3<br>import numpy</p>
-<p>import pandas as pd</p>
-<p>#from pandas import Series,DataFrame</p>
-<p>#import pandas</p>
-<p>data = xlrd.open_workbook(“E:\data.xlsx”)<br>table = data.sheets()[0]   #this need to be verify more</p>
-<p>#print (“check”)<br>print (table.nrows)<br>print (table.name)<br>print (“############################”)</p>
-<p>#total line num<br>line_num=table.nrows</p>
-<p>cell_sectionA=table.cell(1,0).value<br>cell_sectionB=table.cell(1,1).value</p>
-<p>#print (cell_sectionA)</p>
-<p>#print (cell_sectionB)</p>
-<p>start_value=cell_sectionA</p>
-<p>#we need to recode the start value ,but not the end.<br>sectionB_each_time_start=0</p>
-<p>#sectionB_each_time_end=i is ok.</p>
-<p>for i in range(1,line_num):<br>    if start_value != table.cell(i,0).value:<br>        cacu_num=i-sectionB_each_time_start;</p>
-<pre><code>#print (cacu_num)
-#print (&quot;********************************&quot;)
-data={}
-for j in range(0,(cacu_num-1)):
-    data[j]= table.cell((sectionB_each_time_start+j+1),1).value
-    #print (data[j])
-
-df = pd.Series(data)
-#print(&quot;skew\t&quot;)
-#print(&quot;skew: %d  %f&quot; %(table.cell(sectionB_each_time_start+1,0).value,df.skew()))
-print(&quot;%d&quot;%table.cell(sectionB_each_time_start+1,0).value)
-#print(&quot;%f&quot; %df.skew())
-
-#after caculate ,update the variable.
-sectionB_each_time_start=i-1
-start_value=table.cell(i,0).value
-</code></pre><p>#file=xlwt3.Workbook()</p>
-<p>#table_for_wt=file.add_sheet(“test1”);</p>
-<p>#table_for_wt.write(0,0,cell_b)</p>
-<p>#table_for_wt.write(1,1,cell_b)</p>
-<p>#file.save(‘E:\wtest.xls’)</p>
+		<p><a href="https://docs.google.com/document/d/13vMfbZh2SXPMT6unk9y4Nq9CHak75T5u58q-JXHnCrQ/edit" target="_blank" rel="external">https://docs.google.com/document/d/13vMfbZh2SXPMT6unk9y4Nq9CHak75T5u58q-JXHnCrQ/edit</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/python/">python</a>
-  </div>
 
 
 
@@ -169,19 +119,11 @@ start_value=table.cell(i,0).value
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/kernel-issue-tracked-in-THP-huge-page/" title="kernel issue tracked in  THP huge page">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  kernel issue tracked in  THP huge page</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/Software-Solutions-against-page-migration-coherency-problem-on-Embedded-Heterogeneous-System/"  title="Software Solutions against page migration coherency problem on Embedded Heterogeneous System @2013">
+<a href="/wifi-penetration/"  title="wifi_penetration">
  <strong>NEXT:</strong><br/> 
- <span>Software Solutions against page migration coherency problem on Embedded Heterogeneous System @2013
+ <span>wifi_penetration
 </span>
 </a>
 </div>
@@ -194,7 +136,7 @@ start_value=table.cell(i,0).value
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#coding-gbk"><span class="toc-number">1.</span> <span class="toc-text">-- coding: gbk --</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
