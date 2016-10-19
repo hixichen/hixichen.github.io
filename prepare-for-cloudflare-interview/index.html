@@ -4,17 +4,15 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>容器热迁移技术（CRIU）的应用分析（2016.06.12） | xichen&#39; blog</title>
+    <title>prepare_for_cloudflare_interview | xichen&#39; blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="chen xi">
     
-    <meta name="description" content="1.热迁移技术：
-真的是热迁移么？no.
-kernel based vs userspace c/r
-2.两个性能指标：downtime/total time:
-3.CRIU安装:
-$ git clone –b v2.2 https://github.com/xemul/criu.git$ cd c">
+    <meta name="description" content="Reverse proxy  VS proxy
+why reverse proxy?
+1.security.2.performance3.load balance: lvs, nignx, haproxy. 
+突然想起来了个问题， 堆排序。。how to create a heap？">
     
     
     
@@ -67,15 +65,15 @@ $ git clone –b v2.2 https://github.com/xemul/criu.git$ cd c">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/容器热迁移技术（CRIU）的现状（2016-06-12）/" title="容器热迁移技术（CRIU）的应用分析（2016.06.12）" itemprop="url">容器热迁移技术（CRIU）的应用分析（2016.06.12）</a>
+      <a href="/prepare-for-cloudflare-interview/" title="prepare_for_cloudflare_interview" itemprop="url">prepare_for_cloudflare_interview</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xichenpro.com" title="chen xi">chen xi</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-06-13T17:34:10.000Z" itemprop="datePublished">2016-06-13</time>
-    Updated:<time datetime="2016-09-11T20:03:55.000Z" itemprop="dateModified">2016-09-11</time>
+    <time datetime="2016-10-19T00:38:42.000Z" itemprop="datePublished">2016-10-18</time>
+    Updated:<time datetime="2016-10-19T01:49:15.000Z" itemprop="dateModified">2016-10-18</time>
     
   </p>
 </header>
@@ -87,45 +85,17 @@ $ git clone –b v2.2 https://github.com/xemul/criu.git$ cd c">
 		
 		</div>
 		
-		<p><strong>1.热迁移技术：</strong></p>
-<p>真的是热迁移么？no.</p>
-<p>kernel based vs userspace c/r</p>
-<p><strong>2.两个性能指标：downtime/total time:</strong></p>
-<p><strong>3.CRIU安装:</strong></p>
-<p>$ git clone –b v2.2 <a href="https://github.com/xemul/criu.git" target="_blank" rel="external">https://github.com/xemul/criu.git</a><br>$ cd criu/</p>
-<p>安装依赖包：<br>apt-get install -y libprotobuf-dev libprotobuf-c0-dev protobuf-c-compiler \<br>protobuf-compiler python-protobuf libnl-3-dev pkg-config  libcap-dev asciidoc</p>
-<p>change the version ,mark as hijacked，修改下版本<br>$ vim Makefile.versions</p>
-<p>$ make &amp;&amp; make install</p>
-<p>[kernel]:<br>$ uname -a<br>Linux vm1 3.13.11-ckt22 #1 SMP Sat Jul 25 16:04:44 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</p>
-<p>#3.13 must be patched, you ‘d better try to use 3.19.<br>实际上CRIU的内核维护都不在提供ubuntu14.04的相关安装包了，强烈建议使用ubuntu15.04（3.19）或者更高的版本。</p>
-<p><strong>docker native vs external :</strong><br>/home/vagrant/criu# criu -V<br>Version: 2.2.99       //99 is my personal version<br>GitID: v2.2</p>
-<p>docker version:</p>
-<p>As we try to use native docker checkpoint, you may need to use this specification version of Docker.<br>thanks to Ross Boucher.<br><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a><br><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a><br>download: docker-1.9.0-dev<br>$mv docker-1.9.0-dev /usr/bin/docker</p>
-<p>$ ls docker<br>docker</p>
-<p>$ docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
-<p><strong>4.简单案例（待补充）</strong></p>
-<p><strong>5.RUNC与CRIU的关系(待补充)</strong></p>
-<p><strong>6.CRIU当前的问题（待补充):</strong></p>
-<p>Closed TCP socket with peer-name blocks dump #62<br><a href="https://github.com/xemul/criu/issues/62" target="_blank" rel="external">https://github.com/xemul/criu/issues/62</a></p>
-<p>tcp: allow to enable repair mode for sockets in closing states<br><a href="https://lists.openvz.org/pipermail/criu/2014-April/013653.html" target="_blank" rel="external">https://lists.openvz.org/pipermail/criu/2014-April/013653.html</a></p>
-<p>[CRIU] unexpected socket state dump failure<br><a href="https://lists.openvz.org/pipermail/criu/2015-October/022675.html" target="_blank" rel="external">https://lists.openvz.org/pipermail/criu/2015-October/022675.html</a></p>
-<p><a href="http://benohead.com/tcp-about-fin_wait_2-time_wait-and-close_wait/" target="_blank" rel="external">http://benohead.com/tcp-about-fin_wait_2-time_wait-and-close_wait/</a></p>
-<p><a href="https://lwn.net/Articles/525675/" target="_blank" rel="external">https://lwn.net/Articles/525675/</a> LCE: Checkpoint/restore in user space: are we there yet?</p>
-<p><strong>7.内核补丁的介绍(待补充):</strong></p>
-<p><strong>8.热迁移与不可变基础设施（Immutable Infrastructure）:</strong></p>
-<p>New pattern for deploying Docker containers: immutable infrastructure<br>As we discussed above, we use Docker as a “lightweight VM”. However, there is a voice in Docker community that “rather than being a lightweight VM”. Another main difference from VMs is that the containers are designed to be stateless and replaceable [17]. In the VM-centered world, VM contains all the working information like codes, disk data and state data. We say the VM infrastructure is mutable. But Docker container can be deployed in stateless pattern which is defined as immutable infrastructure that use replace rather maintain the state. According to immutable infrastructure, if we could separate the task into small tasks and separate the data and state, we may just need to kill the old container and immediately link to the new container. Handoff will be significantly simplified.&lt;个人的summer project&gt;</p>
-<p><strong>9.总结</strong></p>
-<p><strong>10.My demo</strong><br><a href="https://www.youtube.com/watch?v=S1J0HzCLSoM" target="_blank" rel="external">https://www.youtube.com/watch?v=S1J0HzCLSoM</a></p>
-<p>References:</p>
-<p>[15] CRIU. Checkpoint/Restore In Userspace, <a href="https://criu.org/Docker" target="_blank" rel="external">https://criu.org/Docker</a>.<br>[16] <a href="http://www.slideshare.net/Docker/live-migrating-a-container-pros-cons-and-gotchas" target="_blank" rel="external">http://www.slideshare.net/Docker/live-migrating-a-container-pros-cons-and-gotchas</a>.<br>[17] <a href="https://blog.docker.com/2016/03/containers-are-not-vms/" target="_blank" rel="external">https://blog.docker.com/2016/03/containers-are-not-vms/</a> posted By Mike Coleman March 24, 2016.<br>[18] <a href="https://www.chef.io/blog/2014/06/23/immutable-infrastructure-practical-or-not/" target="_blank" rel="external">https://www.chef.io/blog/2014/06/23/immutable-infrastructure-practical-or-not/</a> Posted on June 23, 2014 by Julian Dunn.<br>[19] <a href="http://developers.redhat.com/blog/2015/01/20/microservice-principles-and-" target="_blank" rel="external">http://developers.redhat.com/blog/2015/01/20/microservice-principles-and-</a> immutability-demonstrated-with-apache-spark-and-cassandra/ Posted on: January 20, 2015 by jayunit100.</p>
-<p>本人原创， 发布于个人博客：xichenpro.com<br>@2016-06-13<br>chen xi @CMU</p>
+		<p><strong>Reverse proxy  VS proxy</strong></p>
+<p>why reverse proxy?</p>
+<p>1.security.<br>2.performance<br>3.load balance: lvs, nignx, haproxy. </p>
+<p>突然想起来了个问题， 堆排序。。<br>how to create a heap？ </p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Docker-live-migration/">Docker live migration</a>
+  <span></span> <a href="/tags/interview/">interview</a>
   </div>
 
 
@@ -161,18 +131,18 @@ $ git clone –b v2.2 https://github.com/xemul/criu.git$ cd c">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/docker-import-error/" title="docker_import_error">
+ <a href="/complement-tree-structure/" title="complement_tree_structure">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  docker_import_error</span>
+  complement_tree_structure</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/"  title="use native docker checkpoint/restore on Ubuntu 14.04">
+<a href="/Go-data-structure/"  title="Go-data_structure">
  <strong>NEXT:</strong><br/> 
- <span>use native docker checkpoint/restore on Ubuntu 14.04
+ <span>Go-data_structure
 </span>
 </a>
 </div>
