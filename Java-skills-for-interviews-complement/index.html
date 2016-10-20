@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>author information | xichen&#39; blog</title>
+    <title>xichen&#39; blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="chen xi">
     
-    <meta name="description" content="Currentlly, I am a master student in CMU MSIT program. I will graduate in Mar.2017. I live in Pittsburgh.  
- my email: xichen0425 at gmail.com">
+    <meta name="description" content="title: Java skills for interviews_complementdate: 2016-10-18 21:33:11
+tags: interviewimport java.util.ArrayList;import java.utl.HashMap
+public class  ">
     
     
     
@@ -63,15 +64,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/author-information/" title="author information" itemprop="url">author information</a>
+      <a href="/Java-skills-for-interviews-complement/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xichenpro.com" title="chen xi">chen xi</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-06-11T01:47:46.000Z" itemprop="datePublished">2016-06-10</time>
-    更新日期:<time datetime="2016-09-11T19:58:58.000Z" itemprop="dateModified">2016-09-11</time>
+    <time datetime="2016-10-19T01:33:11.000Z" itemprop="datePublished">2016-10-18</time>
+    更新日期:<time datetime="2016-10-19T16:09:27.000Z" itemprop="dateModified">2016-10-19</time>
     
   </p>
 </header>
@@ -80,19 +81,222 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-interview"><span class="toc-number">1.</span> <span class="toc-text">tags: interview</span></a></li></ol>
 		</div>
 		
-		<p> Currentlly, I am a master student in CMU MSIT program.<br> I will graduate in Mar.2017.<br> I live in Pittsburgh.  </p>
-<p> my email: xichen0425 at gmail.com</p>
-  
+		<hr>
+<p>title: Java skills for interviews_complement<br>date: 2016-10-18 21:33:11</p>
+<h2 id="tags-interview"><a href="#tags-interview" class="headerlink" title="tags: interview"></a>tags: interview</h2><p>import java.util.ArrayList;<br>import java.utl.HashMap</p>
+<p>public class  JavaSkillsForInterview.java<br>public class JavaSkillsForInterview<br>        public static void main(String[] args) { </p>
+<pre><code>    **String**    
+    String s = &quot;abc&quot;; 
+ s.charAt(0); 
+  s.length(); 
+    s.substring(0, 1); //not include the last bytes
+    s.substring(1); 
+    s.equals(&quot;b&quot;); 
+    s = s.trim(); 
+    s.indexOf(&quot;a&quot;); 
+    s.indexOf(&quot;a&quot;, 1); 
+    s.lastIndexOf(&quot;a&quot;); //??
+    s.indexOf(&quot;a&quot;, 1); 
+    s.toCharArray(); 
+    **String to int**
+    Integer.parseInt(&quot;1234&quot;);
+
+
+    //java.lang.Character.getNumericValue
+    //have numeric values from 10 through 35.
+    //-1 if the character has no numeric value.
+
+
+    Integer.valueOf(s); // returns an Integer object 
+    Integer.parseInt(s); // returns an int primitive 
+
+    String.valueOf(s); // integer to string 
+
+
+    **StringBuilder**
+
+    sb.reverse(); 
+ sb.toString(); 
+    StringBuilder sb = new StringBuilder(); 
+   sb.append(&quot;a&quot;); 
+   sb.insert(0, &quot;a&quot;); 
+    sb.deleteCharAt(sb.length() ‐ 1);
+
+
+
+    **Array**
+
+    int[] a = new int[10]; 
+    char[]b={&apos;a&apos;,&apos;b&apos;}; 
+    int[][] c = new int[10][10]; 
+    int m = a.length; 
+
+    int n = c[0].length; 
+
+    int max = Integer.MAX_VALUE; 
+
+    int min = Integer.MIN_VALUE; 
+
+    Arrays.sort(a); 
+
+    for(int i=0;i&lt;c.length;i++){ 
+
+        System.out.println(c[i]); 
+
+    } 
+
+    **List**
+
+    List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;(); 
+
+    ArrayList&lt;Integer&gt; list1 = new ArrayList&lt;Integer&gt;(); 
+
+    List&lt;List&lt;Integer&gt;&gt; list2 = new ArrayList&lt;List&lt;Integer&gt;&gt;(); 
+   list.add(0); 
+
+    list.add(0, 1); 
+
+    list.get(0); 
+
+    list.size(); 
+
+    list.remove(list.size() ‐ 1); 
+
+    Collections.sort(list); 
+
+    Collections.sort(list, Collections.reverseOrder()); 
+    Collections.sort(list, new Comparator&lt;Integer&gt;() { 
+
+        @Override 
+
+        public int compare(Integer o1, Integer o2) { 
+
+            return o1 ‐ o2;// 0‐&gt;1 
+
+            // return o2‐o1; 1‐&gt;0 
+
+        } 
+
+     }); 
+
+    **Stack** 
+    Stack&lt;Integer&gt; stack = new Stack&lt;Integer&gt;(); 
+
+    stack.push(0); 
+
+    stack.pop(); 
+
+    stack.peek(); 
+
+    stack.isEmpty(); 
+
+    stack.size(); 
+    **Queue**
+
+   // Queue add ‐‐‐‐‐‐&gt; remove, peek 
+    Queue&lt;Integer&gt; q = new LinkedList&lt;Integer&gt;(); 
+
+    q.add(0); 
+    q.remove(); 
+
+    q.peek(); 
+
+    q.isEmpty(); 
+
+    q.size(); 
+
+    **Deque**
+
+    Deque&lt;Integer&gt; deque = new ArrayDeque&lt;Integer&gt;(0);
+    deque.add(1);//add to the end of deque
+    deque.addFirst();// add to the frond of the deque.
+    int a = deque.removeLast();
+    deque.contains(x); // check contain;
+    deque.peek();//get the value of the head,but not remove.
+    deque.poll();//get and remove from the head.    
+
+
+    **HashMap** //donot store duplicate items.
+
+
+    HashMap&lt;Character, Integer&gt; map = new HashMap&lt;Character, Integer&gt;(); 
+
+    map.put(&apos;c&apos;, 1); 
+
+    map.get(&apos;c&apos;); 
+
+    if (map.containsKey(&apos;c&apos;)) { 
+   } 
+    if (map.containsValue(1)) { 
+   } 
+
+    for (Character d : map.keySet()) { 
+    } 
+
+    for (Integer i : map.values()) { 
+  } 
+
+    map.isEmpty(); 
+
+    map.size(); 
+
+    **HashSet**
+
+    HashSet&lt;Integer&gt; set = new HashSet&lt;Integer&gt;(); 
+
+    set.add(0); 
+
+    set.remove(0); 
+    if (set.contains(0)) { 
+    } 
+
+    set.isEmpty(); 
+
+    set.size(); 
+
+    **TreeMap**
+    !donot store duplicate items.
+
+    TreeMap&lt;Integer, String&gt;  treeMap = new TreeMap&lt;Integer, String&gt;();
+    treeMap(1, &quot;Data1&quot;);
+    treeMap(23, “Data2&quot;);
+    Set set = treeMap.entrySet();
+    Iterator iterator = set.iterator();
+        while(iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry)iterator.next();
+            mentry.getKey(),mentry.getValue()
+            //   Object key = entry.getKey();
+            //   Object value=entry.getValue();
+         }
+
+    Map.Entry&lt;K,V&gt;  ceilingEntry(K key)
+    Map.Entry&lt;K,V&gt;  floorEntry(K key)
+
+    **PriorityQueue**
+
+    // mini heap 
+
+PriorityQueue&lt;Integer&gt; pq = new PriorityQueue&lt;Integer&gt;(Collections.reverseOrder());
+
+
+ pq.add(0); 
+
+ pq.remove(); 
+
+ pq.peek(); 
+
+ pq.isEmpty(); 
+ pq.size(); 
+
+    while (!pq.isEmpty()) { 
+    }
+} 
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/About-me/">About me</a>
-  </div>
 
 
 
@@ -127,18 +331,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" title="use native docker checkpoint/restore on Ubuntu 14.04">
+ <a href="/complement-tree-structure/" title="complement_tree_structure">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  use native docker checkpoint/restore on Ubuntu 14.04</span>
+  complement_tree_structure</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/kernel-issue-tracked-in-THP-huge-page/"  title="kernel issue tracked in  THP huge page">
+<a href="/prepare-for-cloudflare-interview/"  title="prepare_for_cloudflare_interview">
  <strong>NEXT:</strong><br/> 
- <span>kernel issue tracked in  THP huge page
+ <span>prepare_for_cloudflare_interview
 </span>
 </a>
 </div>
@@ -151,7 +355,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-interview"><span class="toc-number">1.</span> <span class="toc-text">tags: interview</span></a></li></ol>
   </div>
 
 <div id="asidepart">

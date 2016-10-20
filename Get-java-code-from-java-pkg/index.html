@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>author information | xichen&#39; blog</title>
+    <title>Get java code from java pkg | xichen&#39; blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="chen xi">
     
-    <meta name="description" content="Currentlly, I am a master student in CMU MSIT program. I will graduate in Mar.2017. I live in Pittsburgh.  
- my email: xichen0425 at gmail.com">
+    <meta name="description" content="working on this for homework of mobile security course. 
+$mv app-debug.pkg  app-debug.zipuse zip to uncompress and get the class.dex file. 
+$brew inst">
     
     
     
@@ -63,15 +64,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/author-information/" title="author information" itemprop="url">author information</a>
+      <a href="/Get-java-code-from-java-pkg/" title="Get java code from java pkg" itemprop="url">Get java code from java pkg</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xichenpro.com" title="chen xi">chen xi</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-06-11T01:47:46.000Z" itemprop="datePublished">2016-06-10</time>
-    更新日期:<time datetime="2016-09-11T19:58:58.000Z" itemprop="dateModified">2016-09-11</time>
+    <time datetime="2016-10-19T01:45:31.000Z" itemprop="datePublished">2016-10-18</time>
+    更新日期:<time datetime="2016-10-19T01:48:35.000Z" itemprop="dateModified">2016-10-18</time>
     
   </p>
 </header>
@@ -83,15 +84,21 @@
 		
 		</div>
 		
-		<p> Currentlly, I am a master student in CMU MSIT program.<br> I will graduate in Mar.2017.<br> I live in Pittsburgh.  </p>
-<p> my email: xichen0425 at gmail.com</p>
-  
+		<p>working on this for homework of mobile security course. </p>
+<p><strong>$mv app-debug.pkg  app-debug.zip</strong><br>use zip to uncompress and get the class.dex file. </p>
+<p><strong>$brew install dex2jar</strong><br>d2j-dex2jar classes.dex  to get the jar file. </p>
+<p><strong>$d2j-dex2jar classes.dex</strong><br>dex2jar classes.dex -&gt; ./classes-dex2jar.jar</p>
+<p><strong>use jd-gui to get the source code</strong><br><strong>$ brew install Caskroom/cask/jd-gui</strong></p>
+<p>open the app “jd-gui”:</p>
+<p>import the file and we get the code now:</p>
+<capture file="">
+</capture>  
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/About-me/">About me</a>
+  <span></span> <a href="/tags/Java/">Java</a>
   </div>
 
 
@@ -126,19 +133,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" title="use native docker checkpoint/restore on Ubuntu 14.04">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  use native docker checkpoint/restore on Ubuntu 14.04</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/kernel-issue-tracked-in-THP-huge-page/"  title="kernel issue tracked in  THP huge page">
+<a href="/complement-tree-structure/"  title="complement_tree_structure">
  <strong>NEXT:</strong><br/> 
- <span>kernel issue tracked in  THP huge page
+ <span>complement_tree_structure
 </span>
 </a>
 </div>
