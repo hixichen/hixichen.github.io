@@ -4,14 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>use native docker checkpoint/restore on Ubuntu 14.04 | xichen&#39; blog</title>
+    <title>14829_11_19_pre | xichen&#39; blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="chen xi">
     
-    <meta name="description" content="writen by chen xi.From:  xichenpro.com
-[docker version]:  
-As we try to use native docker checkpoint, you may need to use this specification version o">
+    <meta name="description" content="https://docs.google.com/presentation/d/1mPmjbNSi_wa2m04_kIiSsBTc1dkF-qqejJ5bOnlPCMo/edit#slide=id.g1799e8fe98_0_57">
     
     
     
@@ -64,15 +62,15 @@ As we try to use native docker checkpoint, you may need to use this specificatio
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/use-native-docker-checkpoint-restore-on-Ubuntu-14-04/" title="use native docker checkpoint/restore on Ubuntu 14.04" itemprop="url">use native docker checkpoint/restore on Ubuntu 14.04</a>
+      <a href="/14829-11-19-pre/" title="14829_11_19_pre" itemprop="url">14829_11_19_pre</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xichenpro.com" title="chen xi">chen xi</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-06-11T02:18:31.000Z" itemprop="datePublished">2016-06-10</time>
-    更新日期:<time datetime="2016-09-11T19:58:44.000Z" itemprop="dateModified">2016-09-11</time>
+    <time datetime="2016-11-29T15:24:46.000Z" itemprop="datePublished">2016-11-29</time>
+    更新日期:<time datetime="2016-11-29T15:25:26.000Z" itemprop="dateModified">2016-11-29</time>
     
   </p>
 </header>
@@ -84,29 +82,14 @@ As we try to use native docker checkpoint, you may need to use this specificatio
 		
 		</div>
 		
-		<p>writen by chen xi.<br>From:  xichenpro.com</p>
-<p><strong>[docker version]:</strong>  </p>
-<p>As we try to use native docker checkpoint, you may need to use this specification version of Docker.<br>thanks to Ross Boucher’s great work.  </p>
-<p><a href="https://github.com/boucher/docker/releases" target="_blank" rel="external">https://github.com/boucher/docker/releases</a><br><a href="https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1" target="_blank" rel="external">https://github.com/boucher/docker/releases/tag/v1.9.0-experimental-cr.1</a><br>download:    docker-1.9.0-dev  </p>
-<p>$mv docker-1.9.0-dev /usr/bin/docker</p>
-<p>$ docker daemon &amp;</p>
-<p>$ docker -v<br>Docker version 1.9.0-dev, build 59c375a, experimental</p>
-<p><strong>[kernel:]</strong></p>
-<p>#3.13 must be patched, you’d better try to use 3.19.<br>That means, you’d better use Ubunt15.04 or higher.</p>
-<p> <strong>[CRIU:]</strong></p>
-<p>$ git clone –b v2.2 <a href="https://github.com/xemul/criu.git" target="_blank" rel="external">https://github.com/xemul/criu.git</a><br>$ cd criu/</p>
-<p>dependecies:<br>apt-get install -y libprotobuf-dev libprotobuf-c0-dev protobuf-c-compiler \<br>protobuf-compiler python-protobuf libnl-3-dev pkg-config libcap-dev asciidoc</p>
-<p>change the version ,mark as hijacked if you want.<br>$ vim Makefile.versions<br>$ make &amp;&amp; make install</p>
-<p>$ criu -V<br>Version: 2.2<br>GitID: v2.2</p>
-<p>note: 2.3 had been released on Jun,14.</p>
-<p>If you have question, send mail to me : xichen0425@gmail.com<br>I have the whole environment in virtual machine.</p>
+		<p><a href="https://docs.google.com/presentation/d/1mPmjbNSi_wa2m04_kIiSsBTc1dkF-qqejJ5bOnlPCMo/edit#slide=id.g1799e8fe98_0_57" target="_blank" rel="external">https://docs.google.com/presentation/d/1mPmjbNSi_wa2m04_kIiSsBTc1dkF-qqejJ5bOnlPCMo/edit#slide=id.g1799e8fe98_0_57</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Docker-live-migration/">Docker live migration</a>
+  <span></span> <a href="/tags/temp/">temp</a>
   </div>
 
 
@@ -141,19 +124,11 @@ As we try to use native docker checkpoint, you may need to use this specificatio
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/容器热迁移技术（CRIU）的现状（2016-06-12）/" title="容器热迁移技术（CRIU）的应用分析（2016.06.12）">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  容器热迁移技术（CRIU）的应用分析（2016.06.12）</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/author-information/"  title="author information">
+<a href="/interview-g/"  title="interview_g">
  <strong>NEXT:</strong><br/> 
- <span>author information
+ <span>interview_g
 </span>
 </a>
 </div>
