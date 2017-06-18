@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>go-data_structure | blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="chenxi' blog" />
+  
+  
+  
+  
+  <meta name="description" content="10/18/2016 在夏洛特飞三番的飞机上。 
+一直用java刷题， 最近学习go语言，感觉就是面向过程编程的极大延伸希望能给用go应对常见的算法面试。 
+暂时尚未找到比较合适的算法库。  潜在的选择 https://github.com/Workiva/go-datastructures
+指针与结构体
+type Point struct{    X,Y int}
+p:= Point{10,20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go-data_structure">
+<meta property="og:url" content="http://highfv.com/2016/10/18/Go-data-structure/index.html">
+<meta property="og:site_name" content="blog">
+<meta property="og:description" content="10/18/2016 在夏洛特飞三番的飞机上。 
+一直用java刷题， 最近学习go语言，感觉就是面向过程编程的极大延伸希望能给用go应对常见的算法面试。 
+暂时尚未找到比较合适的算法库。  潜在的选择 https://github.com/Workiva/go-datastructures
+指针与结构体
+type Point struct{    X,Y int}
+p:= Point{10,20">
+<meta property="og:updated_time" content="2016-10-25T23:51:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Go-data_structure">
+<meta name="twitter:description" content="10/18/2016 在夏洛特飞三番的飞机上。 
+一直用java刷题， 最近学习go语言，感觉就是面向过程编程的极大延伸希望能给用go应对常见的算法面试。 
+暂时尚未找到比较合适的算法库。  潜在的选择 https://github.com/Workiva/go-datastructures
+指针与结构体
+type Point struct{    X,Y int}
+p:= Point{10,20">
+  
+    <link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tweets">Tweets</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Go-data-structure" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Go-data_structure
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/10/18/Go-data-structure/" class="article-date">
+	  <time datetime="2016-10-19T03:11:59.000Z" itemprop="datePublished">2016-10-18</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>10/18/2016 在夏洛特飞三番的飞机上。 </p>
+<p>一直用java刷题， 最近学习go语言，感觉就是面向过程编程的极大延伸<br>希望能给用go应对常见的算法面试。 </p>
+<p>暂时尚未找到比较合适的算法库。  潜在的选择 <a href="https://github.com/Workiva/go-datastructures" target="_blank" rel="external">https://github.com/Workiva/go-datastructures</a></p>
+<p><strong>指针与结构体</strong></p>
+<p>type Point struct{<br>    X,Y int<br>}</p>
+<p>p:= Point{10,20}   结构体赋值<br>pp:=&amp;Point{10,20} 结构体指针。 </p>
+<p><strong>字符串</strong><br>s:= “hello”<br>temp:= s[2:3]</p>
+<p><strong>slice</strong><br>指向数组的某个片段<br>x:= []int{2,3,5,7,11}<br>y:= x[1:3]<br>len(p)<br>p[i]<br>s[lo:hi] 取 s 中的下表从 lo 开始到 hi-1 结束的部分</p>
+<p>//create a array.<br>a := make([]int, 5)  // len(a)=5<br>b := make([]int, 0, 5) // len(b)=0, cap(b)=5<br>Go和C中的数组的主要区别，在Go中，</p>
+<p>数组是值。将一个数组赋予另一个数组将复制其所有元素。<br>特别地，如果你将一个数组传递给一个函数，它将接收到该数组的一个副本， 而不是指向它的指针。<br>数组的大小是其类型的一部分。类型 [10]int 和 [20]int 是不同的。</p>
+<p>slice是Go语言的习惯用法， 数组的代价极为昂贵。</p>
+<p>!useful one.<br>append(&amp;array, i)</p>
+<p>import “sort”<br>var keys []int<br>sort.Ints(keys)</p>
+<p><strong>for-rang</strong><br> for index, value := range pow {<br>                fmt.Printf(“%d\n”, value)<br>}</p>
+<p><strong>new &amp;&amp; make</strong><br>new 返回的是类型指针。 new是一个函数， 并不是运算符， 不会对值进行赋值。<br>make返回类型实体。 </p>
+<p><strong>map</strong><br>var mymap   map[string]mytype<br>or<br>var mymap map[mytype1]mytype2</p>
+<p>!must use map to create a new object.</p>
+<p>usage:<br>mymap[key] = elem<br>elem = m[key]<br>delete(m,key)<br>elem,ok=m[key]</p>
+<p>visited := make(map[*Node]bool)</p>
+<p>One common way to protect maps is with sync.RWMutex.<br>This statement declares a counter variable that is an anonymous struct containing a map and an embedded sync.RWMutex.</p>
+<p>var counter = struct{<br>    sync.RWMutex<br>    m map[string]int<br>}{m: make(map[string]int)}</p>
+<p><strong>use heap in go</strong><br><a href="https://golang.org/pkg/container/heap/" target="_blank" rel="external">https://golang.org/pkg/container/heap/</a></p>
+<p>import “container/heap”</p>
+<p>type InitHeap []int<br>Len() / Less(i,j int)/ Swap(i, j int)<br>Push/Pop<br>how to use:</p>
+<p>h:=&amp;IntHeap{2,1,5}<br>heap.Init(h)<br>heap.Push(h,3)<br>h.Len()<br>heap.Pop(h)</p>
+<p><strong>PriorityQueue</strong></p>
+<p>pq := make(PriorityQueue, len(items))</p>
+<p>heap.Init(&amp;pq)<br>heap.Push(&amp;pq, item)<br>pq.update<br>heap.Pop(&amp;pq).(*Item)<br>fmt.Printf(“%.2d:%s “, item.priority, item.value)</p>
+<p><strong>fibonacci</strong></p>
+<p>package main</p>
+<p>import “fmt”</p>
+<p>// fibonacci is a function that returns<br>// a function that returns an int.<br>func fibonacci() func() int {<br>        pre, next := 0,1<br>        return func()int{<br>                pre, next = next, pre+next<br>                return pre<br>        }<br>}</p>
+<p>func main() {<br>        f := fibonacci()<br>        for i := 0; i &lt; 10; i++ {<br>                fmt.Println(f())<br>        }<br>}<br><strong>stack</strong><br>type stack []int</p>
+<p>func (s stack) Empty() bool { return len(s) == 0 }<br>func (s stack) Peek() int   { return s[len(s)-1] }<br>func (s <em>stack) Put(i int)  { (</em>s) = append((<em>s), i) }<br>func (s </em>stack) Pop() int {<br>  d := (<em>s)[len(</em>s)-1]<br>  (<em>s) = (</em>s)[:len(<em>s)-1]<br>  return d<br>}<br><em>*ring环形链表</em></em><br>import “container/ring”<br>Do是一个好玩的遍历方法。</p>
+<p>type Ring<br>    func New(n int) <em>Ring  // 初始化环<br>    func (r </em>Ring) Do(f func(interface{}))  // 循环环进行操作<br>    func (r <em>Ring) Len() int // 环长度<br>    func (r </em>Ring) Link(s <em>Ring) </em>Ring // 连接两个环<br>    func (r <em>Ring) Move(n int) </em>Ring // 指针从当前元素开始向后移动或者向前（n可以为负数）<br>    func (r <em>Ring) Next() </em>Ring // 当前元素的下个元素<br>    func (r <em>Ring) Prev() </em>Ring // 当前元素的上个元素<br>    func (r <em>Ring) Unlink(n int) </em>Ring // 从当前元素开始，删除n个元素</p>
+<p><strong>list</strong><br>import “container/list”<br>type Element</p>
+<p>type Element struct {</p>
+<pre><code>Value interface{}   //在元素中存储的值
+</code></pre><p>}</p>
+<p>func (e <em>Element) Next() </em>Element  //返回该元素的下一个元素，如果没有下一个元素则返回nil<br>func (e <em>Element) Prev() </em>Element//返回该元素的前一个元素，如果没有前一个元素则返回nil。<br>type List<br>func New() <em>List //返回一个初始化的list<br>func (l </em>List) Back() <em>Element //获取list l的最后一个元素<br>func (l </em>List) Front() <em>Element //获取list l的第一个元素<br>func (l </em>List) Init() <em>List  //list l初始化或者清除list l<br>func (l </em>List) InsertAfter(v interface{}, mark <em>Element) </em>Element  //在list l中元素mark之后插入一个值为v的元素，并返回该元素，如果mark不是list中元素，则list不改变。<br>func (l <em>List) InsertBefore(v interface{}, mark </em>Element) <em>Element//在list l中元素mark之前插入一个值为v的元素，并返回该元素，如果mark不是list中元素，则list不改变。<br>func (l </em>List) Len() int //获取list l的长度<br>func (l <em>List) MoveAfter(e, mark </em>Element)  //将元素e移动到元素mark之后，如果元素e或者mark不属于list l，或者e==mark，则list l不改变。<br>func (l <em>List) MoveBefore(e, mark </em>Element)//将元素e移动到元素mark之前，如果元素e或者mark不属于list l，或者e==mark，则list l不改变。<br>func (l <em>List) MoveToBack(e </em>Element)//将元素e移动到list l的末尾，如果e不属于list l，则list不改变。<br>func (l <em>List) MoveToFront(e </em>Element)//将元素e移动到list l的首部，如果e不属于list l，则list不改变。<br>func (l <em>List) PushBack(v interface{}) </em>Element//在list l的末尾插入值为v的元素，并返回该元素。<br>func (l <em>List) PushBackList(other </em>List)//在list l的尾部插入另外一个list，其中l和other可以相等。<br>func (l <em>List) PushFront(v interface{}) </em>Element//在list l的首部插入值为v的元素，并返回该元素。<br>func (l <em>List) PushFrontList(other </em>List)//在list l的首部插入另外一个list，其中l和other可以相等。<br>func (l <em>List) Remove(e </em>Element) interface{}//如果元素e属于list l，将其从list中删除，并返回元素e的值。</p>
+<p>links and thanks:<br><a href="http://ilovers.sinaapp.com/node/33" target="_blank" rel="external">http://ilovers.sinaapp.com/node/33</a><br><a href="https://gobyexample.com/maps" target="_blank" rel="external">https://gobyexample.com/maps</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+        
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript">
+	var disqus_shortname = 'chenxi';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/18/prepare-for-cloudflare-interview/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          prepare_for_cloudflare_interview
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/25/wifi-penetration/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wifi_penetration</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="artnav">None</ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2017 blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/tweets" class="mobile-nav-link">Tweets</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2017 Chen Xi All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+</body>
+</html>
