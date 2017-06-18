@@ -1,0 +1,710 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="golang," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="10/18/2016 在夏洛特飞三番的飞机上。 
+一直用java刷题， 最近学习go语言，感觉就是面向过程编程的极大延伸希望能给用go应对常见的算法面试。 
+暂时尚未找到比较合适的算法库。  潜在的选择 https://github.com/Workiva/go-datastructures
+指针与结构体
+type Point struct{    X,Y int}
+p:= Point{10,20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go-data_structure">
+<meta property="og:url" content="http://highfv.com/Go-data-structure/index.html">
+<meta property="og:site_name" content="Personal blog">
+<meta property="og:description" content="10/18/2016 在夏洛特飞三番的飞机上。 
+一直用java刷题， 最近学习go语言，感觉就是面向过程编程的极大延伸希望能给用go应对常见的算法面试。 
+暂时尚未找到比较合适的算法库。  潜在的选择 https://github.com/Workiva/go-datastructures
+指针与结构体
+type Point struct{    X,Y int}
+p:= Point{10,20">
+<meta property="og:updated_time" content="2016-10-25T23:51:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Go-data_structure">
+<meta name="twitter:description" content="10/18/2016 在夏洛特飞三番的飞机上。 
+一直用java刷题， 最近学习go语言，感觉就是面向过程编程的极大延伸希望能给用go应对常见的算法面试。 
+暂时尚未找到比较合适的算法库。  潜在的选择 https://github.com/Workiva/go-datastructures
+指针与结构体
+type Point struct{    X,Y int}
+p:= Point{10,20">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://highfv.com/Go-data-structure/"/>
+
+
+
+
+
+  <title>Go-data_structure | Personal blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Personal blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://highfv.com/Go-data-structure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chen xi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Go-data_structure</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-18T20:11:59-07:00">
+                2016-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>10/18/2016 在夏洛特飞三番的飞机上。 </p>
+<p>一直用java刷题， 最近学习go语言，感觉就是面向过程编程的极大延伸<br>希望能给用go应对常见的算法面试。 </p>
+<p>暂时尚未找到比较合适的算法库。  潜在的选择 <a href="https://github.com/Workiva/go-datastructures" target="_blank" rel="external">https://github.com/Workiva/go-datastructures</a></p>
+<p><strong>指针与结构体</strong></p>
+<p>type Point struct{<br>    X,Y int<br>}</p>
+<p>p:= Point{10,20}   结构体赋值<br>pp:=&amp;Point{10,20} 结构体指针。 </p>
+<p><strong>字符串</strong><br>s:= “hello”<br>temp:= s[2:3]</p>
+<p><strong>slice</strong><br>指向数组的某个片段<br>x:= []int{2,3,5,7,11}<br>y:= x[1:3]<br>len(p)<br>p[i]<br>s[lo:hi] 取 s 中的下表从 lo 开始到 hi-1 结束的部分</p>
+<p>//create a array.<br>a := make([]int, 5)  // len(a)=5<br>b := make([]int, 0, 5) // len(b)=0, cap(b)=5<br>Go和C中的数组的主要区别，在Go中，</p>
+<p>数组是值。将一个数组赋予另一个数组将复制其所有元素。<br>特别地，如果你将一个数组传递给一个函数，它将接收到该数组的一个副本， 而不是指向它的指针。<br>数组的大小是其类型的一部分。类型 [10]int 和 [20]int 是不同的。</p>
+<p>slice是Go语言的习惯用法， 数组的代价极为昂贵。</p>
+<p>!useful one.<br>append(&amp;array, i)</p>
+<p>import “sort”<br>var keys []int<br>sort.Ints(keys)</p>
+<p><strong>for-rang</strong><br> for index, value := range pow {<br>                fmt.Printf(“%d\n”, value)<br>}</p>
+<p><strong>new &amp;&amp; make</strong><br>new 返回的是类型指针。 new是一个函数， 并不是运算符， 不会对值进行赋值。<br>make返回类型实体。 </p>
+<p><strong>map</strong><br>var mymap   map[string]mytype<br>or<br>var mymap map[mytype1]mytype2</p>
+<p>!must use map to create a new object.</p>
+<p>usage:<br>mymap[key] = elem<br>elem = m[key]<br>delete(m,key)<br>elem,ok=m[key]</p>
+<p>visited := make(map[*Node]bool)</p>
+<p>One common way to protect maps is with sync.RWMutex.<br>This statement declares a counter variable that is an anonymous struct containing a map and an embedded sync.RWMutex.</p>
+<p>var counter = struct{<br>    sync.RWMutex<br>    m map[string]int<br>}{m: make(map[string]int)}</p>
+<p><strong>use heap in go</strong><br><a href="https://golang.org/pkg/container/heap/" target="_blank" rel="external">https://golang.org/pkg/container/heap/</a></p>
+<p>import “container/heap”</p>
+<p>type InitHeap []int<br>Len() / Less(i,j int)/ Swap(i, j int)<br>Push/Pop<br>how to use:</p>
+<p>h:=&amp;IntHeap{2,1,5}<br>heap.Init(h)<br>heap.Push(h,3)<br>h.Len()<br>heap.Pop(h)</p>
+<p><strong>PriorityQueue</strong></p>
+<p>pq := make(PriorityQueue, len(items))</p>
+<p>heap.Init(&amp;pq)<br>heap.Push(&amp;pq, item)<br>pq.update<br>heap.Pop(&amp;pq).(*Item)<br>fmt.Printf(“%.2d:%s “, item.priority, item.value)</p>
+<p><strong>fibonacci</strong></p>
+<p>package main</p>
+<p>import “fmt”</p>
+<p>// fibonacci is a function that returns<br>// a function that returns an int.<br>func fibonacci() func() int {<br>        pre, next := 0,1<br>        return func()int{<br>                pre, next = next, pre+next<br>                return pre<br>        }<br>}</p>
+<p>func main() {<br>        f := fibonacci()<br>        for i := 0; i &lt; 10; i++ {<br>                fmt.Println(f())<br>        }<br>}<br><strong>stack</strong><br>type stack []int</p>
+<p>func (s stack) Empty() bool { return len(s) == 0 }<br>func (s stack) Peek() int   { return s[len(s)-1] }<br>func (s <em>stack) Put(i int)  { (</em>s) = append((<em>s), i) }<br>func (s </em>stack) Pop() int {<br>  d := (<em>s)[len(</em>s)-1]<br>  (<em>s) = (</em>s)[:len(<em>s)-1]<br>  return d<br>}<br><em>*ring环形链表</em></em><br>import “container/ring”<br>Do是一个好玩的遍历方法。</p>
+<p>type Ring<br>    func New(n int) <em>Ring  // 初始化环<br>    func (r </em>Ring) Do(f func(interface{}))  // 循环环进行操作<br>    func (r <em>Ring) Len() int // 环长度<br>    func (r </em>Ring) Link(s <em>Ring) </em>Ring // 连接两个环<br>    func (r <em>Ring) Move(n int) </em>Ring // 指针从当前元素开始向后移动或者向前（n可以为负数）<br>    func (r <em>Ring) Next() </em>Ring // 当前元素的下个元素<br>    func (r <em>Ring) Prev() </em>Ring // 当前元素的上个元素<br>    func (r <em>Ring) Unlink(n int) </em>Ring // 从当前元素开始，删除n个元素</p>
+<p><strong>list</strong><br>import “container/list”<br>type Element</p>
+<p>type Element struct {</p>
+<pre><code>Value interface{}   //在元素中存储的值
+</code></pre><p>}</p>
+<p>func (e <em>Element) Next() </em>Element  //返回该元素的下一个元素，如果没有下一个元素则返回nil<br>func (e <em>Element) Prev() </em>Element//返回该元素的前一个元素，如果没有前一个元素则返回nil。<br>type List<br>func New() <em>List //返回一个初始化的list<br>func (l </em>List) Back() <em>Element //获取list l的最后一个元素<br>func (l </em>List) Front() <em>Element //获取list l的第一个元素<br>func (l </em>List) Init() <em>List  //list l初始化或者清除list l<br>func (l </em>List) InsertAfter(v interface{}, mark <em>Element) </em>Element  //在list l中元素mark之后插入一个值为v的元素，并返回该元素，如果mark不是list中元素，则list不改变。<br>func (l <em>List) InsertBefore(v interface{}, mark </em>Element) <em>Element//在list l中元素mark之前插入一个值为v的元素，并返回该元素，如果mark不是list中元素，则list不改变。<br>func (l </em>List) Len() int //获取list l的长度<br>func (l <em>List) MoveAfter(e, mark </em>Element)  //将元素e移动到元素mark之后，如果元素e或者mark不属于list l，或者e==mark，则list l不改变。<br>func (l <em>List) MoveBefore(e, mark </em>Element)//将元素e移动到元素mark之前，如果元素e或者mark不属于list l，或者e==mark，则list l不改变。<br>func (l <em>List) MoveToBack(e </em>Element)//将元素e移动到list l的末尾，如果e不属于list l，则list不改变。<br>func (l <em>List) MoveToFront(e </em>Element)//将元素e移动到list l的首部，如果e不属于list l，则list不改变。<br>func (l <em>List) PushBack(v interface{}) </em>Element//在list l的末尾插入值为v的元素，并返回该元素。<br>func (l <em>List) PushBackList(other </em>List)//在list l的尾部插入另外一个list，其中l和other可以相等。<br>func (l <em>List) PushFront(v interface{}) </em>Element//在list l的首部插入值为v的元素，并返回该元素。<br>func (l <em>List) PushFrontList(other </em>List)//在list l的首部插入另外一个list，其中l和other可以相等。<br>func (l <em>List) Remove(e </em>Element) interface{}//如果元素e属于list l，将其从list中删除，并返回元素e的值。</p>
+<p>links and thanks:<br><a href="http://ilovers.sinaapp.com/node/33" target="_blank" rel="external">http://ilovers.sinaapp.com/node/33</a><br><a href="https://gobyexample.com/maps" target="_blank" rel="external">https://gobyexample.com/maps</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/golang/" rel="tag"># golang</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/wifi-penetration/" rel="next" title="wifi_penetration">
+                <i class="fa fa-chevron-left"></i> wifi_penetration
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/prepare-for-cloudflare-interview/" rel="prev" title="prepare_for_cloudflare_interview">
+                prepare_for_cloudflare_interview <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="chen xi" />
+          <p class="site-author-name" itemprop="name">chen xi</p>
+           
+              <p class="site-description motion-element" itemprop="description">personal blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chen xi</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
