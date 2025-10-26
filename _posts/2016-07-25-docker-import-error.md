@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "docker_import_error"
 date: 2016-07-25
-draft: false
 tags: ["Docker"]
 ---
 

@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "Java skills for interviews complement"
 date: 2016-10-18
-draft: false
 tags: ["interview"]
 ---
 

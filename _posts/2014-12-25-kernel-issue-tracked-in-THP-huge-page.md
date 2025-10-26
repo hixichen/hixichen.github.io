@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "kernel issue tracked in  THP huge page"
 date: 2014-12-25
-draft: false
 tags: []
 ---
 

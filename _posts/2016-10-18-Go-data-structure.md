@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "Go-data_structure"
 date: 2016-10-18
-draft: false
 tags: ["golang"]
 ---
 

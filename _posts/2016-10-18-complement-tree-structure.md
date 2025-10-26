@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "complement_tree_structure"
 date: 2016-10-18
-draft: false
 tags: ["interview"]
 ---
 

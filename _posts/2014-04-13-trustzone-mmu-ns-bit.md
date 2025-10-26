@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "trustzone_mmu_ns_bit"
 date: 2014-04-13
-draft: false
 tags: ["trustzone"]
 ---
 

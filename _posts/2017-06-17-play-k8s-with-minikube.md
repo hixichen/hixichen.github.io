@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "play kubernetes with minikube"
 date: 2017-06-17
-draft: false
 tags: ["k8s,minikube,kubernetes"]
 ---
 

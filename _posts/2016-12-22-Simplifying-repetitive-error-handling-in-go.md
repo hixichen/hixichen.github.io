@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "Simplifying repetitive error handling in go"
 date: 2016-12-22
-draft: false
 tags: ["go"]
 ---
 

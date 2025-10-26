@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "interview_g"
 date: 2016-10-26
-draft: false
 tags: ["interview"]
 ---
 

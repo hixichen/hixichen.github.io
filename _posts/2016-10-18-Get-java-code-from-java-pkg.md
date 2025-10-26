@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "Get java code from java pkg"
 date: 2016-10-18
-draft: false
 tags: ["Java"]
 ---
 

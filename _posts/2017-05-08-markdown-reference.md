@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "markdown reference"
 date: 2017-05-08
-draft: false
 tags: ["learning"]
 ---
 

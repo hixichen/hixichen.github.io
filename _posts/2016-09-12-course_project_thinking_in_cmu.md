@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "course project thinking for cmu-14823"
 date: 2016-09-12
-draft: false
 tags: ["study in CMU"]
 ---
 

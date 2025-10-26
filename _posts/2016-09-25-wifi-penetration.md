@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "wifi_penetration"
 date: 2016-09-25
-draft: false
 tags: ["security"]
 ---
 

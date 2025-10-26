@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "prepare_for_cloudflare_interview"
 date: 2016-10-18
-draft: false
 tags: ["interview"]
 ---
 

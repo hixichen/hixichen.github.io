@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "Get k8s events with minikube"
 date: 2018-09-01
-draft: false
 tags: []
 ---
 

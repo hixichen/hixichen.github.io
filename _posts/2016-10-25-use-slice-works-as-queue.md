@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "use slice works as queue"
 date: 2016-10-25
-draft: false
 tags: ["golang"]
 ---
 

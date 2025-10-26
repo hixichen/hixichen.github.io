@@ -1,7 +1,7 @@
 ---
+layout: post
 title: ""
 date: 2017-08-08
-draft: false
 tags: []
 ---
 

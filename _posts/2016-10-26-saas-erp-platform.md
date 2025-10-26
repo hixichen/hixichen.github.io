@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "saas_erp_platform"
 date: 2016-10-26
-draft: false
 tags: ["cloud computing"]
 ---
 

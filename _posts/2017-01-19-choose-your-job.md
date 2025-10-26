@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "choose_your_job"
 date: 2017-01-19
-draft: false
 tags: []
 ---
 

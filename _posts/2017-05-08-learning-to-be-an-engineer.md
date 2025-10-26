@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "后端平台开发工程师的养成"
 date: 2017-05-08
-draft: false
 tags: ["backend"]
 ---
 

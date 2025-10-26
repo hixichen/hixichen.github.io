@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "Software Solutions against page migration coherency problem on Embedded Heterogeneous System @2013"
 date: 2013-09-28
-draft: false
 tags: ["trustzone"]
 ---
 

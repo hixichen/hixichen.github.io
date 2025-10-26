@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "use native docker checkpoint/restore on Ubuntu 14.04"
 date: 2016-06-10
-draft: false
 tags: ["Docker live migration"]
 ---
 

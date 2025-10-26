@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "use python with pandas to get the skew in excel"
 date: 2014-12-25
-draft: false
 tags: ["python"]
 ---
 

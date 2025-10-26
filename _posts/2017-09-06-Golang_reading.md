@@ -1,7 +1,7 @@
 ---
+layout: post
 title: "go 阅读摘要"
 date: 2017-09-06
-draft: false
 tags: ["golang"]
 ---
 
