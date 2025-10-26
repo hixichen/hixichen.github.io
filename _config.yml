@@ -1,102 +1,67 @@
-title: "Chen Xi's Blog"
-description: "Personal tech blog about software engineering, cloud computing, and system design"
-author: "Chen Xi"
+# Site settings
+title: Chen Xi
+description: Software Engineer & Technology Enthusiast
+author: Chen Xi
 url: "https://hixichen.github.io"
 baseurl: ""
 
-# GitHub Pages settings
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"
+# Theme settings
+remote_theme: daattali/beautiful-jekyll
 
-# Plugin settings
+# Navigation
+navbar-links:
+  Posts: "/"
+  About Me: "about"
+
+# Social network links
+social-network-links:
+  github: hixichen
+
+# Post settings
+excerpt_length: 50
+feed_show_excerpt: true
+feed_show_tags: true
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Plugins
 plugins:
-  - jekyll-feed
+  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-include-cache
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: /:year/:month/:day/:title/
-
-# Site settings
 timezone: UTC
-locale: "en-US"
 
-# Author info
-author:
-  name: "Chen Xi"
-  bio: "Software Engineer & Technology Enthusiast"
-  location: "Earth"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/hixichen"
+# Beautiful Jekyll settings
+navbar-col: "#EAEAEA"
+navbar-text-col: "#404040"
+navbar-border-col: "#DDDDDD"
+page-col: "#FFFFFF"
+text-col: "#404040"
+link-col: "#008AFF"
+hover-col: "#0085A1"
+footer-col: "#EAEAEA"
+footer-text-col: "#777777"
+footer-link-col: "#404040"
 
-# Footer
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/hixichen"
-
-# Pagination
-paginate: 10
-paginate_path: /page:num/
-
-# Archives
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: false
-      share: true
-      related: true
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+# Other settings
+round-avatar: true
+show-avatar: true
 
 # Exclude files
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - vendor
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
-  - Capfile
-  - CHANGELOG
-  - config
+  - CHANGELOG.md
+  - CNAME
+  - Dockerfile
   - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
+  - Gemfile.lock
   - LICENSE
-  - log
-  - node_modules
-  - package.json
-  - Rakefile
-  - README
-  - tmp
+  - README.md
+  - Vagrantfile
   - hexo_to_hugo_converter.py
   - requirements.txt
   - CONVERSION_README.md
