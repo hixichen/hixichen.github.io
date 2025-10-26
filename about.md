@@ -1,8 +1,7 @@
 ---
-layout: single
+layout: page
 title: "About"
 permalink: /about/
-author_profile: true
 ---
 
 # About Me

@@ -1,6 +1,5 @@
 ---
-layout: home
-author_profile: true
+layout: page
 ---
 
 Welcome to my technical blog! I'm Chen Xi, a software engineer passionate about cloud computing, backend systems, and emerging technologies.
