@@ -10,7 +10,7 @@ remote_theme: daattali/beautiful-jekyll
 
 # Navigation
 navbar-links:
-  Posts: "/"
+  Posts: "https://hixichen.github.io"
   About Me: "about"
 
 # Social network links
