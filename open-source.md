@@ -62,6 +62,37 @@ As a Staff Software Engineer focused on security infrastructure and distributed 
 ### **eBPF**
 **Why I'm interested**: The ability to run sandboxed programs in kernel space opens up new possibilities for security monitoring, network filtering, and performance optimization. Projects like Cilium and Falco demonstrate eBPF's potential for building next-generation security and networking tools.
 
+## Projects I've Contributed To
+
+### **VMware Go KCL**
+**Repository**: [vmware/vmware-go-kcl](https://github.com/vmware/vmware-go-kcl)
+**My contribution**: [Client Library Implementation](https://github.com/vmware/vmware-go-kcl/tree/master/clientlibrary)
+**Why I contributed**: Kinesis Client Library for Go fills a crucial gap in the AWS ecosystem for Go developers. Having worked with distributed systems and event streaming, I understand the importance of reliable client libraries for processing real-time data streams. Contributing to the client library helps ensure robust Kinesis integration for Go applications.
+
+### **OpenBao OAuth App Secrets Plugin**
+**Repository**: [openbao/openbao-plugin-secrets-oauthapp](https://github.com/openbao/openbao-plugin-secrets-oauthapp)
+**My contribution**: [Pull Request #31](https://github.com/openbao/openbao-plugin-secrets-oauthapp/pull/31)
+**Why I contributed**: As someone deeply involved in secrets management, contributing to OpenBao's OAuth application secrets plugin aligns with my expertise in secure credential handling. This plugin enables dynamic OAuth token management, which is essential for modern API integrations and follows the principle of least privilege access.
+
+### **CAEP SSF Hub**
+**Repository**: [hixichen/caep.dev](https://github.com/hixichen/caep.dev/tree/main/ssf-hub)
+**My contribution**: SSF Hub implementation
+**Why I contributed**: Continuous Access Evaluation Protocol (CAEP) and Shared Signals Framework (SSF) represent the future of real-time security event sharing. Building the SSF Hub demonstrates my commitment to advancing identity security standards and enabling better threat response across federated systems.
+
+## Additional Projects of Interest
+
+### **OpenBao**
+**Website**: [openbao.org](https://openbao.org/)
+**Why I'm interested**: OpenBao represents the community-driven evolution of HashiCorp Vault, maintaining the open-source principles that made Vault successful. As someone who has extensive experience with Vault in production, I'm excited about OpenBao's potential to continue advancing secrets management while remaining truly open source. The project's commitment to backward compatibility and community governance makes it a compelling alternative.
+
+### **Ory Kratos**
+**Repository**: [ory/kratos](https://github.com/ory/kratos)
+**Why I'm interested**: Identity and user management is a critical component of any security architecture. Kratos takes a headless, API-first approach to identity management that aligns with modern cloud-native applications. Its support for various authentication methods, self-service flows, and privacy-focused design makes it particularly interesting for building user-centric security systems.
+
+### **VMware Go KCL (Broader Project)**
+**Repository**: [vmware/vmware-go-kcl](https://github.com/vmware/vmware-go-kcl)
+**Why I'm interested**: Beyond my specific contributions, the broader project represents an important piece of infrastructure for real-time data processing. Kinesis is crucial for building event-driven architectures, and having a robust Go client library enables better integration with Go-based microservices and data pipelines.
+
 ---
 
 ## Contributing Philosophy
