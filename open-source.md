@@ -18,7 +18,10 @@ As a Staff Software Engineer focused on security infrastructure and distributed 
 
 **Why I'm interested**: Policy-as-code is transformative for security at scale. OPA's declarative approach with Rego enables consistent policy enforcement across diverse systems. Its integration capabilities with service meshes, Kubernetes, and API gateways make it a cornerstone for implementing fine-grained access control in cloud-native environments.
 
-### spicedb
+### **SpiceDB**
+
+**Repository**: [authzed/spicedb](https://github.com/authzed/spicedb)
+**Why I'm interested**: SpiceDB is a Zanzibar-inspired authorization system that brings Google's relationship-based access control to the open source world. Its ability to model complex permission relationships and provide real-time authorization decisions at scale makes it particularly compelling for building fine-grained access control systems. The graph-based approach to permissions enables more intuitive security modeling compared to traditional RBAC systems.
 
 ## Database & Storage
 
@@ -26,36 +29,55 @@ As a Staff Software Engineer focused on security infrastructure and distributed 
 
 **Why I'm interested**: The combination of ACID transactions with NoSQL scale is compelling for security infrastructure where consistency is non-negotiable. Apple's use of FoundationDB for iCloud demonstrates its production readiness. Its layered architecture and strong consistency guarantees make it ideal for building security asset databases and other critical systems.
 
-### **cockroach**
+### **CockroachDB**
 
+**Repository**: [cockroachdb/cockroach](https://github.com/cockroachdb/cockroach)
+**Why I'm interested**: CockroachDB's approach to building a distributed SQL database that combines the familiarity of SQL with the scalability of NoSQL is fascinating. Its implementation of distributed transactions using a hybrid logical clock and its ability to survive datacenter failures while maintaining strong consistency make it an excellent choice for mission-critical applications that require both scale and reliability.
+
+### **etcd**
+
+**Repository**: [etcd-io/etcd](https://github.com/etcd-io/etcd)
 **Why I'm interested**: As the backbone of Kubernetes, etcd's Raft consensus algorithm and strong consistency model are fascinating from both theoretical and practical perspectives. Understanding distributed consensus is crucial for building reliable systems, and etcd's implementation is a masterclass in production-ready distributed systems.
 
-https://github.com/cockroachdb/cockroach
+## Secrets Management
 
 ### **OpenBao**
 
 **Website**: [openbao.org](https://openbao.org/)
+**Repository**: [openbao/openbao](https://github.com/openbao/openbao)
 **Why I'm interested**: OpenBao represents the community-driven evolution of HashiCorp Vault, maintaining the open-source principles that made Vault successful. As someone who has extensive experience with Vault in production, I'm excited about OpenBao's potential to continue advancing secrets management while remaining truly open source. The project's commitment to backward compatibility and community governance makes it a compelling alternative.
+
+## Identity & Access Management
 
 ### **Ory Kratos**
 
 **Repository**: [ory/kratos](https://github.com/ory/kratos)
 **Why I'm interested**: Identity and user management is a critical component of any security architecture. Kratos takes a headless, API-first approach to identity management that aligns with modern cloud-native applications. Its support for various authentication methods, self-service flows, and privacy-focused design makes it particularly interesting for building user-centric security systems.
 
+## DevOps & Infrastructure
+
 ### **ArgoCD**
 
+**Repository**: [argoproj/argo-cd](https://github.com/argoproj/argo-cd)
 **Why I'm interested**: GitOps represents the natural evolution of infrastructure management. ArgoCD's declarative continuous delivery model aligns with the principles of infrastructure-as-code and provides the auditability and reliability required for production systems. The integration with Kubernetes and support for multi-cluster deployments are particularly compelling.
 
-### **OpenTracing**
+## Observability
 
-**Why I'm interested**: Distributed tracing is crucial for understanding complex system behavior and detecting anomalies. OpenTracing's vendor-neutral approach to instrumentation enables comprehensive observability across heterogeneous systems, which is essential for security monitoring and incident response.
+### **OpenTelemetry**
+
+**Repository**: [open-telemetry/opentelemetry-specification](https://github.com/open-telemetry/opentelemetry-specification)
+**Why I'm interested**: OpenTelemetry (the successor to OpenTracing) provides vendor-neutral observability through metrics, logs, and traces. Its unified approach to instrumentation enables comprehensive observability across heterogeneous systems, which is essential for security monitoring and incident response. The project's momentum and industry adoption make it the de facto standard for observability.
+
+## Emerging Technologies
 
 ### **WebAssembly (WASM)**
 
+**Repository**: [WebAssembly/spec](https://github.com/WebAssembly/spec)
 **Why I'm interested**: WASM's sandboxing capabilities and cross-platform execution model have interesting security implications. The ability to run untrusted code safely and the potential for WASM-based plugin architectures in security tools make it worth watching.
 
 ### **eBPF**
 
+**Repository**: [libbpf/libbpf](https://github.com/libbpf/libbpf)
 **Why I'm interested**: The ability to run sandboxed programs in kernel space opens up new possibilities for security monitoring, network filtering, and performance optimization. Projects like Cilium and Falco demonstrate eBPF's potential for building next-generation security and networking tools.
 
 ## Projects I've Contributed To
