@@ -12,6 +12,7 @@ remote_theme: daattali/beautiful-jekyll
 navbar-links:
   Posts: "https://hixichen.github.io"
   About Me: "about"
+  Open Source Projects: "open-source"
 
 # Social network links
 social-network-links:
